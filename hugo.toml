@@ -1,4 +1,58 @@
-baseURL = 'https://example.org/'
-languageCode = 'fr-fr'
 title = 'Compile-moi ça'
+baseURL = 'https://example.org/'
+
+languageCode = 'fr-fr'
+defaultContentLanguage = "fr-fr"
+
+enableEmoji = true
+ignoreErrors = ["additional-script-loading-error"]
+
 theme = 'blog-awesome'
+
+[Languages.fr-fr]
+  languageName = "French"
+  languageCode = "fr-fr"
+  contentDir = "content/"
+  weight = 1
+
+  [Languages.fr-fr.menu]
+  [[Languages.fr-fr.menu.main]]
+    pageRef="/"
+    name = 'Accueil'
+    url = '/'
+    weight = 10
+  [[Languages.fr-fr.menu.main]]
+    pageRef="posts"
+    name = 'Articles'
+    url = '/posts/'
+    weight = 20
+  [[Languages.fr-fr.menu.main]]
+    pageRef="about"
+    name = 'À propos'
+    url = '/about/'
+    weight = 30
+
+[Languages.fr-fr.params]
+  sitename = "Compile-moi ça"
+  defaultColor = "dark" # set color mode: dark, light, auto
+  description = "Mon blog technique où je partage mon apprentissage en développement web."
+  mainSections = ['posts']
+  toc = true # set to false to disable table of contents 'globally'
+  tocOpen = false # set to true to open table of contents by default
+  goToTop = true # set to false to disable 'go to top' button
+  dateFormat = ""
+
+[Languages.fr-fr.params.author]
+  avatar = "eblancha.webp" # put the file in assets folder; also ensure that image has same height and width
+  # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
+  intro = "Compile-moi ça !"
+  name = "Emma B"
+  description = "Blog technique où je partage mon apprentissage en développement web."
+
+[Languages.fr-fr.params.webmanifest]
+  name = "sitename" # will use "params.sitename" or "title" by default
+  short_name = "sitename" # same as name
+  start_url = "/" # will use homepage url by default
+  theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
+  background_color = "#fff" # by default depend on "params.defaultColor" for "light" or "auto" will be set to "#fff" for dark will be "#131418" (color of dark mode background)
+  display = "standalone"
