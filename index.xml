@@ -14,7 +14,11 @@
       
       <guid>http://localhost:1313/about/</guid>
       
-      <description>&lt;p&gt;Je suis Emma, bonjour.&lt;/p&gt;</description>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-qui-je-suis&#34;&gt;👋 Qui je suis&lt;/h2&gt;
+&lt;p&gt;Après plusieurs années passionnantes dans l&amp;rsquo;audiovisuel 🎥, j’ai choisi de réorienter ma carrière vers le développement logiciel 🖥️. Une décision portée par ma curiosité insatiable et mon envie de relever de nouveaux défis.&lt;/p&gt;
+&lt;p&gt;🎓 Actuellement en formation à l’école &lt;strong&gt;42 Paris&lt;/strong&gt;, j’apprends la programmation en &lt;strong&gt;C&lt;/strong&gt;, le &lt;strong&gt;développement web&lt;/strong&gt; et travaille sur des projets concrets, seule ou en équipe.&lt;/p&gt;
+&lt;p&gt;🎨 Je m’oriente progressivement vers le &lt;strong&gt;développement front-end&lt;/strong&gt;, là où je peux mettre à profit :&lt;/p&gt;</description>
       
     </item>
     
