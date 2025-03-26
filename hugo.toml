@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'fr-fr'
+title = 'Compile-moi ça'
+theme = 'blog-awesome'
