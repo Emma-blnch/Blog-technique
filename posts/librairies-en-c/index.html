@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">📚 Les librairies en C : à quoi elles servent ? | Compile-moi ça</title>
+<meta property="og:title" content="📚 Les librairies en C : à quoi elles servent ? | Compile-moi ça" />
+<meta name="twitter:title" content="📚 Les librairies en C : à quoi elles servent ? | Compile-moi ça" />
+<meta itemprop="name" content="📚 Les librairies en C : à quoi elles servent ? | Compile-moi ça" />
+<meta name="application-name" content="📚 Les librairies en C : à quoi elles servent ? | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales.">
+<meta itemprop="description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales." />
+<meta property="og:description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales." />
+<meta name="twitter:description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales." />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-28T10:48:57&#43;0100 />
+    <meta property="article:published_time" content=2025-03-28T10:48:57&#43;0100 />
+    <meta property="og:url" content="https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "📚 Les librairies en C : à quoi elles servent ?",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-28",
+        "description": "Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales.",
+        "wordCount":  479 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="📚 Les librairies en C : à quoi elles servent ?">
+  <meta property="og:description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales.">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T10:48:57+01:00">
+    <meta property="article:modified_time" content="2025-03-28T10:48:57+01:00">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Librairies">
+    <meta property="article:tag" content="Programmation">
+    <meta property="article:tag" content="Débutant">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="📚 Les librairies en C : à quoi elles servent ?">
+  <meta name="twitter:description" content="Une petite intro simple aux librairies les plus utiles en langage C avec leurs fonctions principales.">
+
+
+    
+
+    <link rel="canonical" href="https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/">
+    <link href="/Compile-moi-ca/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/Compile-moi-ca/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Compile-moi-ca/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Compile-moi-ca/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Compile-moi-ca/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/Compile-moi-ca/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/Compile-moi-ca/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://emma-blnch.github.io/Compile-moi-ca/site.webmanifest">
+
+<meta name="msapplication-config" content="/Compile-moi-ca/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/Compile-moi-ca/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/Compile-moi-ca/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://emma-blnch.github.io/Compile-moi-ca/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/Compile-moi-ca/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/Compile-moi-ca/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/Compile-moi-ca/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">📚 Les librairies en C : à quoi elles servent ?</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-28T10:48:57&#43;01:00" itemprop="datePublished"> 28 mars 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-définition-rapide">📖 Définition rapide</a></li>
+    <li><a href="#-les-librairies-utiles-à-connaître">🧰 Les librairies utiles à connaître</a>
+      <ul>
+        <li><a href="#stdioh--affichage-et-lecture-standard"><code>stdio.h</code> → affichage et lecture (standard)</a></li>
+        <li><a href="#stdlibh--outils-utiles-standard"><code>stdlib.h</code> → outils utiles (standard)</a></li>
+        <li><a href="#stringh--manipuler-des-chaînes-de-caractères-standard"><code>string.h</code> → manipuler des chaînes de caractères (standard)</a></li>
+        <li><a href="#stdboolh--utiliser-bool-true-false-standard"><code>stdbool.h</code> → utiliser <code>bool</code>, <code>true</code>, <code>false</code> (standard)</a></li>
+        <li><a href="#unistdh--fonctions-système-système"><code>unistd.h</code> → fonctions système (système)</a></li>
+        <li><a href="#fcntlh--manipuler-les-fichiers-système"><code>fcntl.h</code> → manipuler les fichiers (système)</a></li>
+        <li><a href="#limitsh--connaître-les-limites-standard"><code>limits.h</code> → connaître les limites (standard)</a></li>
+        <li><a href="#stdinth--types-précis-standard"><code>stdint.h</code> → types précis (standard)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-pour-aller-plus-loin">🔗 Pour aller plus loin</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Quand tu codes en C, tu vas souvent utiliser des <strong>librairies</strong>.<br>
+Mais c’est quoi exactement une librairie ❓</p>
+<hr>
+<h2 id="-définition-rapide">📖 Définition rapide</h2>
+<p>Une <strong>librairie</strong> (ou bibliothèque) en C, c’est un fichier qui <strong>contient des fonctions toutes prêtes</strong>, qu’on peut utiliser sans les réécrire soi-même.</p>
+<p>📕 En gros, c&rsquo;est comme un dictionnaire où l&rsquo;ordinateur peut chercher les définitions des fonctions que tu veux utiliser.</p>
+<p>Tu les ajoutes en début de fichier avec <code>#include &lt;nom.h&gt;</code></p>
+<p>Par exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><p>te permet d&rsquo;utiliser <code>printf</code>. Donc :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;bonjour</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span></code></pre></div><p>✅ fonctionnera parfaitement mais :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;bonjour</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span></code></pre></div><p>❌ ne marchera pas, ta machine te dira sûrement <code>&quot;implicitly declaring library function 'printf'&quot;</code>.</p>
+<blockquote>
+<p>💡 Astuce : pour savoir si tu dois inclure une librairie, pense à regarder le message d&rsquo;erreur. S’il parle d’une fonction &ldquo;non déclarée&rdquo;, c’est souvent qu’il manque son #include en haut du fichier !<br>
+Plus d&rsquo;infos sur les messages d&rsquo;erreur dans mon article dédié !</p></blockquote>
+<hr>
+<h2 id="-les-librairies-utiles-à-connaître">🧰 Les librairies utiles à connaître</h2>
+<h3 id="stdioh--affichage-et-lecture-standard"><code>stdio.h</code> → affichage et lecture (standard)</h3>
+<ul>
+<li><code>printf()</code> → afficher dans le terminal</li>
+<li><code>scanf()</code> → lire une entrée clavier</li>
+<li><code>perror()</code> → afficher une erreur système</li>
+</ul>
+<h3 id="stdlibh--outils-utiles-standard"><code>stdlib.h</code> → outils utiles (standard)</h3>
+<ul>
+<li><code>malloc()</code> / <code>free()</code> → allouer / libérer de la mémoire</li>
+<li><code>exit()</code> → quitter un programme</li>
+<li><code>atoi()</code> → convertir une string en entier</li>
+<li><code>rand()</code> → générer un nombre aléatoire</li>
+</ul>
+<h3 id="stringh--manipuler-des-chaînes-de-caractères-standard"><code>string.h</code> → manipuler des chaînes de caractères (standard)</h3>
+<ul>
+<li><code>strlen()</code> → longueur d’une string</li>
+<li><code>strcpy()</code>, <code>strncpy()</code> → copier une string</li>
+<li><code>strcmp()</code> → comparer deux strings</li>
+<li><code>strcat()</code> → concaténer des strings (les &ldquo;coller&rdquo; ensemble)</li>
+</ul>
+<h3 id="stdboolh--utiliser-bool-true-false-standard"><code>stdbool.h</code> → utiliser <code>bool</code>, <code>true</code>, <code>false</code> (standard)</h3>
+<ul>
+<li>Fournit le type <code>bool</code> et les valeurs <code>true</code> / <code>false</code></li>
+<li>Nécessaire pour faire des conditions plus lisibles</li>
+</ul>
+<h3 id="unistdh--fonctions-système-système"><code>unistd.h</code> → fonctions système (système)</h3>
+<ul>
+<li><code>write()</code> / <code>read()</code> → écrire/lire des fichiers ou terminal</li>
+<li><code>sleep()</code> → pause du programme</li>
+<li><code>close()</code> → fermer un fichier</li>
+</ul>
+<h3 id="fcntlh--manipuler-les-fichiers-système"><code>fcntl.h</code> → manipuler les fichiers (système)</h3>
+<ul>
+<li><code>open()</code> / <code>close()</code> / <code>read()</code> / <code>write()</code> → ouvrir, lire, écrire, fermer un fichier</li>
+<li><code>fcntl()</code> → modifier les propriétés du descripteur de fichier</li>
+</ul>
+<h3 id="limitsh--connaître-les-limites-standard"><code>limits.h</code> → connaître les limites (standard)</h3>
+<ul>
+<li>Définit les <strong>valeurs max/min</strong> pour les types (<code>INT_MAX</code>, <code>CHAR_MIN</code>, etc.)</li>
+<li>Utile pour éviter les dépassements</li>
+</ul>
+<h3 id="stdinth--types-précis-standard"><code>stdint.h</code> → types précis (standard)</h3>
+<ul>
+<li>Donne des types comme <code>int8_t</code>, <code>uint32_t</code>, etc.</li>
+<li>Très pratique pour écrire du code portable et clair</li>
+</ul>
+<blockquote>
+<p>Les librairies <code>standard</code> du C font partie de la norme <strong>officielle</strong> du langage C donc <em>peu importe ton système d&rsquo;exploitation</em> elles seront incluses par ton compilateur.
+Par contre les librairies <code>système</code> font partie du standard <strong>POSIX</strong> et sont disponibles uniquement sur <em>Linux</em> ou <em>Unix</em> (ou bien sur un environnement compatible POSIX type Cygwin).</p></blockquote>
+<hr>
+<h2 id="-pour-aller-plus-loin">🔗 Pour aller plus loin</h2>
+<ul>
+<li><a href="https://www.irif.fr/~yunes/cours/systemes/stdlib.html">Cours sur les librairies système (stdlib, etc.) – IRIF</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_standard_du_C">Article Wikipédia sur la bibliothèque standard du C</a></li>
+</ul>
+<hr>
+<p>N’hésite pas à venir piocher ici quand tu ne sais plus quelle librairie utiliser 😄<br>
+Et tu peux venir voir mon article sur les <strong>types</strong> si tu veux comprendre pourquoi <code>stdbool.h</code> ou <code>stdint.h</code> peuvent te sauver la mise !</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://emma-blnch.github.io/Compile-moi-ca/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
