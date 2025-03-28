@@ -1,5 +1,5 @@
 title = 'Compile-moi ça'
-baseURL = 'https://example.org/'
+baseURL = "https://emma-blnch.github.io/Blog-technique/"
 
 languageCode = 'fr-fr'
 defaultContentLanguage = "fr-fr"
@@ -43,7 +43,7 @@ theme = 'blog-awesome'
   dateFormat = ""
 
 [Languages.fr-fr.params.author]
-  avatar = "eblancha.webp" # put the file in assets folder; also ensure that image has same height and width
+  #avatar = "eblancha.webp" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "Compile-moi ça !"
   name = "Emma B"
