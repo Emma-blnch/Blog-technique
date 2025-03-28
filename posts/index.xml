@@ -6,7 +6,24 @@
     <description>Recent content in Posts on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 10:52:57 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 11:42:53 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🖨️ Printf : affichage, formats et coulisses</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/printf/</link>
+      <pubDate>Fri, 28 Mar 2025 11:42:53 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/printf/</guid>
+      
+      <description>&lt;p&gt;&lt;code&gt;printf&lt;/code&gt; est sûrement la &lt;strong&gt;fonction la plus utilisée&lt;/strong&gt; en C pour afficher des choses à l’écran.&lt;br&gt;
+Mais derrière sa simplicité apparente, elle cache pas mal de subtilités 🔍&lt;/p&gt;
+&lt;p&gt;Dans cet article, on va voir &lt;strong&gt;comment utiliser printf&lt;/strong&gt;, &lt;strong&gt;les formats les plus utiles&lt;/strong&gt;, &lt;strong&gt;les erreurs à éviter&lt;/strong&gt;, et même &lt;strong&gt;ce qui se passe en coulisses&lt;/strong&gt; quand tu l’appelles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-printf-&#34;&gt;🧁 C’est quoi &lt;code&gt;printf&lt;/code&gt; ?&lt;/h2&gt;
+&lt;p&gt;La fonction &lt;code&gt;printf()&lt;/code&gt; vient de la librairie standard &lt;code&gt;stdio.h&lt;/code&gt;.&lt;br&gt;
+Elle te permet &lt;strong&gt;d’afficher du texte ou des valeurs&lt;/strong&gt; dans le terminal.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>🔗 Les pointeurs en C : enfin comprendre comment ça marche</title>
       <link>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</link>

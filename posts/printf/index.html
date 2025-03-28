@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🖨️ Printf : affichage, formats et coulisses | Compile-moi ça</title>
+<meta property="og:title" content="🖨️ Printf : affichage, formats et coulisses | Compile-moi ça" />
+<meta name="twitter:title" content="🖨️ Printf : affichage, formats et coulisses | Compile-moi ça" />
+<meta itemprop="name" content="🖨️ Printf : affichage, formats et coulisses | Compile-moi ça" />
+<meta name="application-name" content="🖨️ Printf : affichage, formats et coulisses | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot.">
+<meta itemprop="description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot." />
+<meta property="og:description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot." />
+<meta name="twitter:description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot." />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="https://emma-blnch.github.io/Blog-technique/posts/printf/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-28T11:42:53&#43;0100 />
+    <meta property="article:published_time" content=2025-03-28T11:42:53&#43;0100 />
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/printf/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🖨️ Printf : affichage, formats et coulisses",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-28",
+        "description": "Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot.",
+        "wordCount":  603 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/printf/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="🖨️ Printf : affichage, formats et coulisses">
+  <meta property="og:description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot.">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T11:42:53+01:00">
+    <meta property="article:modified_time" content="2025-03-28T11:42:53+01:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🖨️ Printf : affichage, formats et coulisses">
+  <meta name="twitter:description" content="Un tour complet de la fonction printf : comment l’utiliser efficacement, éviter les erreurs et comprendre ce qu’il se passe vraiment sous le capot.">
+
+
+    
+
+    <link rel="canonical" href="https://emma-blnch.github.io/Blog-technique/posts/printf/">
+    <link href="/Blog-technique/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/Blog-technique/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Blog-technique/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Blog-technique/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Blog-technique/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/Blog-technique/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/Blog-technique/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://emma-blnch.github.io/Blog-technique/site.webmanifest">
+
+<meta name="msapplication-config" content="/Blog-technique/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/Blog-technique/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/Blog-technique/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://emma-blnch.github.io/Blog-technique/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/Blog-technique/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🖨️ Printf : affichage, formats et coulisses</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-28T11:42:53&#43;01:00" itemprop="datePublished"> 28 mars 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-cest-quoi-printf-">🧁 C’est quoi <code>printf</code> ?</a></li>
+    <li><a href="#-les-formats-les-plus-courants">🧪 Les formats les plus courants</a></li>
+    <li><a href="#-erreurs-fréquentes">⚠️ Erreurs fréquentes</a></li>
+    <li><a href="#-mais-comment-ça-marche-vraiment-">🔧 Mais&hellip; comment ça marche vraiment ?</a>
+      <ul>
+        <li><a href="#-les-fonctions-variadiques-cest-quoi-">👉 Les fonctions variadiques, c’est quoi ?</a></li>
+      </ul>
+    </li>
+    <li><a href="#-petit-rappel-sur-n">🧠 Petit rappel sur <code>\n</code></a></li>
+    <li><a href="#-mini-quiz">🎮 Mini quiz</a></li>
+    <li><a href="#-résumé">📌 Résumé</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p><code>printf</code> est sûrement la <strong>fonction la plus utilisée</strong> en C pour afficher des choses à l’écran.<br>
+Mais derrière sa simplicité apparente, elle cache pas mal de subtilités 🔍</p>
+<p>Dans cet article, on va voir <strong>comment utiliser printf</strong>, <strong>les formats les plus utiles</strong>, <strong>les erreurs à éviter</strong>, et même <strong>ce qui se passe en coulisses</strong> quand tu l’appelles.</p>
+<hr>
+<h2 id="-cest-quoi-printf-">🧁 C’est quoi <code>printf</code> ?</h2>
+<p>La fonction <code>printf()</code> vient de la librairie standard <code>stdio.h</code>.<br>
+Elle te permet <strong>d’afficher du texte ou des valeurs</strong> dans le terminal.</p>
+<p>Exemple basique :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello, world!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>💡 Le <code>\n</code> à la fin sert à faire un <strong>retour à la ligne</strong> (comme appuyer sur &ldquo;Entrée&rdquo;).</p></blockquote>
+<hr>
+<h2 id="-les-formats-les-plus-courants">🧪 Les formats les plus courants</h2>
+<p><code>printf</code> ne fait pas que du texte ! Tu peux afficher <strong>des variables</strong> en ajoutant des <strong>formats spéciaux</strong> dans la chaîne.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Format</th>
+          <th>Affiche&hellip;</th>
+          <th>Exemple</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>%d</code></td>
+          <td>un entier (<code>int</code>)</td>
+          <td><code>printf(&quot;%d&quot;, 42);</code></td>
+      </tr>
+      <tr>
+          <td><code>%u</code></td>
+          <td>un entier positif (<code>unsigned</code>)</td>
+          <td><code>printf(&quot;%u&quot;, 150u);</code></td>
+      </tr>
+      <tr>
+          <td><code>%c</code></td>
+          <td>un caractère (<code>char</code>)</td>
+          <td><code>printf(&quot;%c&quot;, 'A');</code></td>
+      </tr>
+      <tr>
+          <td><code>%s</code></td>
+          <td>une chaîne (<code>char *</code>)</td>
+          <td><code>printf(&quot;%s&quot;, &quot;Hello&quot;);</code></td>
+      </tr>
+      <tr>
+          <td><code>%f</code></td>
+          <td>un nombre à virgule</td>
+          <td><code>printf(&quot;%f&quot;, 3.14);</code></td>
+      </tr>
+      <tr>
+          <td><code>%p</code></td>
+          <td>une adresse mémoire</td>
+          <td><code>printf(&quot;%p&quot;, ptr);</code></td>
+      </tr>
+      <tr>
+          <td><code>%%</code></td>
+          <td>un symbole <code>%</code></td>
+          <td><code>printf(&quot;100%% C&quot;);</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>Tu peux aussi <strong>mixer texte et variables</strong> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;J’ai %d ans.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, age); <span style="color:#75715e">// ➜ J’ai 30 ans.
+</span></span></span></code></pre></div><hr>
+<h2 id="-erreurs-fréquentes">⚠️ Erreurs fréquentes</h2>
+<ul>
+<li><strong>Utiliser un mauvais format</strong> → <code>%d</code> pour un <code>char *</code> = 💥</li>
+<li><strong>Oublier le <code>\n</code></strong> → ton affichage se retrouve collé</li>
+<li><strong>Trop ou pas assez d’arguments</strong> → <code>printf(&quot;%d %d&quot;, 10);</code> = comportement imprévisible</li>
+<li><strong>Oublier <code>#include &lt;stdio.h&gt;</code></strong> → erreur à la compilation</li>
+</ul>
+<hr>
+<h2 id="-mais-comment-ça-marche-vraiment-">🔧 Mais&hellip; comment ça marche vraiment ?</h2>
+<p>Quand tu appelles <code>printf</code>, voici ce qui se passe dans l’ombre :</p>
+<ol>
+<li>🧩 <code>printf</code> <strong>reçoit une chaîne de caractères</strong> avec des <strong>placeholders</strong> (<code>%d</code>, <code>%s</code>, etc.)</li>
+<li>🧪 Il <strong>lit cette chaîne caractère par caractère</strong></li>
+<li>🔎 Quand il voit un <code>%</code>, il <strong>analyse le caractère suivant</strong> pour savoir quel type de donnée il doit afficher</li>
+<li>💼 Il <strong>récupère la valeur correspondante dans les arguments</strong> (grâce à un mécanisme spécial qu’on appelle les <strong>variadic functions</strong>)</li>
+<li>🖨️ Il <strong>formate la valeur</strong> (par exemple convertir un int en texte) et l’envoie vers la sortie (le terminal)</li>
+</ol>
+<h3 id="-les-fonctions-variadiques-cest-quoi-">👉 Les fonctions variadiques, c’est quoi ?</h3>
+<p>En C, tu peux écrire une fonction qui accepte <strong>un nombre variable d’arguments</strong>. C’est exactement ce que fait <code>printf</code>.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">printf</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>format, ...);
+</span></span></code></pre></div><p>Le <code>...</code> signifie : &ldquo;il peut y avoir plusieurs arguments, je ne sais pas combien à l’avance&rdquo;.</p>
+<p>Et pour gérer ces arguments, <code>printf</code> utilise une suite de macros :</p>
+<ul>
+<li><code>va_list</code> → une liste des arguments</li>
+<li><code>va_start</code> → pour commencer à lire les arguments</li>
+<li><code>va_arg</code> → pour en lire un à la fois</li>
+<li><code>va_end</code> → pour fermer proprement</li>
+</ul>
+<blockquote>
+<p>Ces mécanismes sont utilisés dans l’implémentation du projet <code>ft_printf</code> à l’école 42 ! 🔍</p></blockquote>
+<hr>
+<h2 id="-petit-rappel-sur-n">🧠 Petit rappel sur <code>\n</code></h2>
+<p>Le <code>\n</code> est un <strong>caractère d’échappement</strong> : il ne s’affiche pas, mais il <strong>provoque un retour à la ligne</strong>.</p>
+<p>D’autres exemples utiles :</p>
+<ul>
+<li><code>\t</code> → tabulation</li>
+<li><code>\\</code> → un seul <code>\</code></li>
+<li><code>\&quot;</code> → un guillemet <code>&quot;</code></li>
+</ul>
+<hr>
+<h2 id="-mini-quiz">🎮 Mini quiz</h2>
+<blockquote>
+<p>Que va afficher ce code ?</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cool&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;a = %d et mot = %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a, mot);
+</span></span></code></pre></div><p>Réponse :</p>
+<pre tabindex="0"><code>a = 5 et mot = cool
+</code></pre><hr>
+<h2 id="-résumé">📌 Résumé</h2>
+<ul>
+<li><code>printf</code> est ton meilleur ami pour afficher des valeurs et <strong>débuguer ton code</strong></li>
+<li>Utilise toujours le bon <strong>format</strong> (<code>%d</code>, <code>%s</code>, <code>%p</code>, etc.)</li>
+<li>Comprendre ce qui se passe <strong>sous le capot</strong> t’aide à être plus à l’aise avec le langage</li>
+<li>Et maintenant tu es prêt·e à l’utiliser dans <strong>tous tes exercices !</strong></li>
+</ul>
+<p>👉 Prochain article : des petits exercices pratiques pour manipuler les <code>printf</code>, les pointeurs et les types 🧠</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://emma-blnch.github.io/Blog-technique/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
