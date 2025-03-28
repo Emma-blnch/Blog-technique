@@ -1,5 +1,5 @@
 title = 'Compile-moi ça'
-baseURL = "https://emma-blnch.github.io/Blog-technique/"
+baseURL = 'https://emma-blnch.github.io/Blog-technique/'
 
 languageCode = 'fr-fr'
 defaultContentLanguage = "fr-fr"
