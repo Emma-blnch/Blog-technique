@@ -72,17 +72,99 @@ free(n); // on libère !
 
 ---
 
+## 🔗 Et les doubles pointeurs, alors ? (`int **`, `char **`)
+
+Tu les as sûrement vus dans la fonction `main()` ou en passant un tableau de strings :  
+```c
+int main(int argc, char **argv) {
+    // code
+}
+```
+
+Mais... c’est quoi exactement un **double pointeur** ?
+
+👉 Un `int **pptr` est un **pointeur vers un pointeur vers un int**.
+
+### 🔍 Schéma mental :
+- `int x = 10;` → une valeur
+- `int *p = &x;` → un pointeur vers x
+- `int **pp = &p;` → un pointeur vers le pointeur p
+
+```c
+int x = 10;
+int *p = &x;
+int **pp = &p;
+
+printf("%d", **pp); // affiche 10
+```
+
+> 💡 Tu peux voir ça comme une chaîne :  
+> `pp` → `p` → `x`
+
+---
+
+## 🧰 À quoi servent les doubles pointeurs ?
+
+### ✅ 1. Modifier un pointeur dans une fonction
+
+En C, tout est **passé par valeur**. Si tu veux **modifier un pointeur depuis une fonction**, tu dois lui passer un double pointeur.
+
+Exemple :
+```c
+void change_val(int **pp) {
+    static int x = 99;
+    *pp = &x;
+}
+
+int main() {
+    int *ptr = NULL;
+    change_val(&ptr);
+    printf("%d", *ptr); // affiche : 99
+}
+```
+
+> Ici, `change_val()` modifie l’adresse pointée par `ptr` grâce à `int **`.
+
+---
+
+### ✅ 2. Manipuler un tableau de chaînes
+
+Quand tu vois `char **argv`, c’est exactement ça : **un tableau de `char *`** donc **un `char **`**.
+
+Tu peux aussi l’utiliser dans des fonctions qui reçoivent un tableau de strings par exemple :
+```c
+void print_all(char **tab) {
+    int i = 0;
+    while (tab[i]) {
+        printf("%s", tab[i]);
+        i++;
+    }
+}
+```  
+
+> Imagine un tableau où chaque case contient une phrase. Chaque phrase est elle-même une suite de caractères (une `string` ou `char *`). Ensemble, ce tableau est un `char **`.  
+
+---
+
+Les doubles pointeurs peuvent sembler un peu trop abstraits au début, mais avec un peu de pratique, tu verras que ce sont juste **des pointeurs de niveau supérieur**, utiles dans plein de cas pratiques 💪
+
+👉 Si tu dois retenir juste une chose c'est ça :  
+➡️ Les *pointeurs* servent à **modifier une variable dans une fonction** = on envoie l'adresse de la variable.  
+➡️ Les *pointeurs sur pointeurs* servent à **modifier un pointeur dans une fonction** = on envoie l'adresse du pointeur.  
+
+---
+
 ## 🧠 Résumé rapide
 
 | Symbole | Signification         |
 |---------|------------------------|
 | `*`     | Accès à la valeur pointée |
 | `&`     | Adresse d’une variable     |
-| `int *` | pointeur vers un entier    |
+| `int *` | Pointeur vers un entier    |
+| `int **` | Pointeur vers un pointeur d’entier |
+| `char **`| Manipuler un tableau de chaîne de caractères     |
 
----
+---  
 
 Voilà, t’as survécu aux pointeurs 😄  
 Et maintenant tu peux voir à quel point ils sont liés à la **mémoire**, la **stack**, la **heap** et même aux **erreurs** dont on a parlé avant.
-
-👉 Tu veux t'entraîner avec des exemples concrets ? Je te prépare bientôt un article 100% pratique avec des petits exercices ✍️

@@ -127,4 +127,4 @@ a = 5 et mot = cool
 - Comprendre ce qui se passe **sous le capot** t’aide à être plus à l’aise avec le langage
 - Et maintenant tu es prêt·e à l’utiliser dans **tous tes exercices !**
 
-👉 Prochain article : des petits exercices pratiques pour manipuler les `printf`, les pointeurs et les types 🧠
+👉 Prochain article : la fonction main et son utilité 🧠

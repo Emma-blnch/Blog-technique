@@ -63,7 +63,8 @@ Exemple :
 ```c
 char lettre = 'E';
 ```
-est correct. Mais
+est correct.  
+Mais :
 ```c
 char lettres = 'ABC';
 ```
@@ -180,4 +181,4 @@ jours_semaine = 8; // ❌ Erreur : variable constante
 ---
 
 J’espère que ce petit tour t’a éclairé 🔦  
-Tu veux aller plus loin ? Je te prépare un article sur les **pointeurs** très bientôt 🔗
+Tu veux aller plus loin ? Un article sur les **pointeurs** est déjà disponible ! 🔗

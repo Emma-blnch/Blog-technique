@@ -101,4 +101,4 @@ printf("bonjour\n");
 ---
 
 N’hésite pas à venir piocher ici quand tu ne sais plus quelle librairie utiliser 😄  
-Et tu peux venir voir mon article sur les **types** si tu veux comprendre pourquoi `stdbool.h` ou `stdint.h` peuvent te sauver la mise !
+Et tu peux aller voir mon article sur les **types** si tu veux comprendre pourquoi `stdbool.h` ou `stdint.h` peuvent te sauver la mise !

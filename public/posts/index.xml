@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 11:42:53 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 16:59:14 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📍 La fonction main : explication et utilité</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/main/</link>
+      <pubDate>Fri, 28 Mar 2025 16:59:14 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/main/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C, &lt;strong&gt;tout commence par une seule fonction&lt;/strong&gt; : &lt;code&gt;main()&lt;/code&gt;&lt;br&gt;
+C’est elle que le système appelle &lt;strong&gt;en premier&lt;/strong&gt; quand il lance ton programme.&lt;/p&gt;
+&lt;p&gt;Mais pourquoi est-elle si spéciale ? Et que veulent dire ses arguments &lt;code&gt;int argc&lt;/code&gt; et &lt;code&gt;char **argv&lt;/code&gt; ?&lt;br&gt;
+Je t’explique tout 👇&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-main--la-porte-dentrée&#34;&gt;🚪 &lt;code&gt;main()&lt;/code&gt; : la porte d’entrée&lt;/h2&gt;
+&lt;p&gt;Quand tu exécutes un programme C, &lt;strong&gt;le système cherche automatiquement une fonction appelée &lt;code&gt;main()&lt;/code&gt;&lt;/strong&gt;.&lt;br&gt;
+Sans elle, ton programme ne sait pas &lt;strong&gt;par où commencer&lt;/strong&gt; → tu auras une erreur à la compilation.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>🖨️ Printf : affichage, formats et coulisses</title>
       <link>https://emma-blnch.github.io/Blog-technique/posts/printf/</link>
