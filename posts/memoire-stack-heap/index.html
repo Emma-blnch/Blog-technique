@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables | Compile-moi ça</title>
+<meta property="og:title" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables | Compile-moi ça" />
+<meta name="twitter:title" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables | Compile-moi ça" />
+<meta itemprop="name" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables | Compile-moi ça" />
+<meta name="application-name" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code.">
+<meta itemprop="description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code." />
+<meta property="og:description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code." />
+<meta name="twitter:description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code." />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="http://localhost:1313/posts/memoire-stack-heap/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-28T10:52:16&#43;0100 />
+    <meta property="article:published_time" content=2025-03-28T10:52:16&#43;0100 />
+    <meta property="og:url" content="http://localhost:1313/posts/memoire-stack-heap/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-28",
+        "description": "Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code.",
+        "wordCount":  383 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/memoire-stack-heap/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables">
+  <meta property="og:description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code.">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T10:52:16+01:00">
+    <meta property="article:modified_time" content="2025-03-28T10:52:16+01:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables">
+  <meta name="twitter:description" content="Un article simple pour comprendre comment fonctionne la mémoire en C, la différence entre la stack (pile) et la heap (tas), et pourquoi ça compte pour ton code.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/memoire-stack-heap/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-28T10:52:16&#43;01:00" itemprop="datePublished"> 28 mars 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-quest-ce-que-la-mémoire-en-c-">🧱 Qu’est-ce que la mémoire en C ?</a></li>
+    <li><a href="#-la-stack-pile">📦 La stack (pile)</a>
+      <ul>
+        <li><a href="#-ce-quon-y-trouve-">✅ Ce qu’on y trouve :</a></li>
+        <li><a href="#-caractéristiques-">⚡ Caractéristiques :</a></li>
+        <li><a href="#exemple-">Exemple :</a></li>
+      </ul>
+    </li>
+    <li><a href="#-la-heap-tas">🧺 La heap (tas)</a>
+      <ul>
+        <li><a href="#-ce-quon-y-trouve--1">✅ Ce qu’on y trouve :</a></li>
+        <li><a href="#-caractéristiques--1">⚡ Caractéristiques :</a></li>
+        <li><a href="#exemple--1">Exemple :</a></li>
+      </ul>
+    </li>
+    <li><a href="#-résumé-rapide">🧠 Résumé rapide</a></li>
+    <li><a href="#-pourquoi-cest-important-">📌 Pourquoi c’est important ?</a></li>
+    <li><a href="#-pour-aller-plus-loin">🔗 Pour aller plus loin</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Quand tu codes en C, tu entends souvent parler de <strong>stack</strong> (pile) et de <strong>heap</strong> (tas).<br>
+Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important ?</p>
+<hr>
+<h2 id="-quest-ce-que-la-mémoire-en-c-">🧱 Qu’est-ce que la mémoire en C ?</h2>
+<p>Quand tu exécutes un programme, ton ordinateur lui réserve de la <strong>mémoire</strong>. Cette mémoire est divisée en différentes zones, et <strong>les deux principales</strong> que tu manipules en C sont :</p>
+<ul>
+<li>la <strong>stack</strong> (ou pile)</li>
+<li>la <strong>heap</strong> (ou tas)</li>
+</ul>
+<p>Chacune a un fonctionnement et un usage différents.</p>
+<hr>
+<h2 id="-la-stack-pile">📦 La stack (pile)</h2>
+<blockquote>
+<p>La stack, c’est comme une pile d’assiettes : on empile des trucs, et on les enlève dans l’ordre inverse.</p></blockquote>
+<h3 id="-ce-quon-y-trouve-">✅ Ce qu’on y trouve :</h3>
+<ul>
+<li>les <strong>variables locales</strong></li>
+<li>les <strong>paramètres des fonctions</strong></li>
+<li>les appels de fonctions eux-mêmes</li>
+</ul>
+<h3 id="-caractéristiques-">⚡ Caractéristiques :</h3>
+<ul>
+<li>Allouée <strong>automatiquement</strong></li>
+<li>Très rapide</li>
+<li>Taille limitée</li>
+<li>Se vide toute seule quand la fonction se termine</li>
+</ul>
+<h3 id="exemple-">Exemple :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ma_fonction</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>; <span style="color:#75715e">// stocké sur la stack
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><blockquote>
+<p>💡 Tu ne gères rien, tout est pris en charge automatiquement.</p></blockquote>
+<hr>
+<h2 id="-la-heap-tas">🧺 La heap (tas)</h2>
+<blockquote>
+<p>La heap, c’est un peu comme un grand entrepôt où tu ranges les données dont tu ne sais pas combien de temps tu vas les garder.</p></blockquote>
+<h3 id="-ce-quon-y-trouve--1">✅ Ce qu’on y trouve :</h3>
+<ul>
+<li>les <strong>données dynamiques</strong>, allouées avec <code>malloc</code>, <code>calloc</code>, <code>realloc</code></li>
+</ul>
+<h3 id="-caractéristiques--1">⚡ Caractéristiques :</h3>
+<ul>
+<li>Allouée <strong>manuellement</strong></li>
+<li>Plus lente que la stack</li>
+<li>Capacité plus grande</li>
+<li>Tu dois <strong>libérer</strong> la mémoire toi-même (<code>free()</code>)</li>
+</ul>
+<h3 id="exemple--1">Exemple :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">free</span>(ptr); <span style="color:#75715e">// bien penser à free sinon ➡️ fuite mémoire !
+</span></span></span></code></pre></div><blockquote>
+<p>⚠️ Oublier de libérer la mémoire = <strong>fuite mémoire</strong> = pas bon !</p></blockquote>
+<hr>
+<h2 id="-résumé-rapide">🧠 Résumé rapide</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Zone</th>
+          <th>Allouée comment ?</th>
+          <th>Ce qu’on y stocke</th>
+          <th>Durée de vie</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Stack</td>
+          <td>Automatiquement</td>
+          <td>Variables locales, appels</td>
+          <td>Temporaire (fonction)</td>
+      </tr>
+      <tr>
+          <td>Heap</td>
+          <td>Manuellement</td>
+          <td>Données dynamiques (<code>malloc</code>)</td>
+          <td>Manuelle (jusqu’à <code>free</code>)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-pourquoi-cest-important-">📌 Pourquoi c’est important ?</h2>
+<ul>
+<li>Pour comprendre <strong>d’où viennent les erreurs</strong> (ex : &ldquo;segfault&rdquo;, &ldquo;memory leak&rdquo;…)</li>
+<li>Pour bien utiliser les <strong>pointeurs</strong> (qu’on verra dans l’article suivant 😉)</li>
+<li>Pour éviter les bugs liés à la mémoire (comme utiliser une variable déjà libérée)</li>
+</ul>
+<hr>
+<p>Voilà, maintenant tu sais où vont tes variables quand tu les déclares ✨<br>
+Prochaine étape : les <strong>pointeurs</strong> 🔗 (et tu vas voir, avec ce qu’on vient de voir, c’est beaucoup plus clair 😉)</p>
+<hr>
+<h2 id="-pour-aller-plus-loin">🔗 Pour aller plus loin</h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/">Explication approfondie de la différence entre stack et heap</a></li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
