@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Compile-moi ça</title>
+    <link>http://localhost:1313/tags/c/</link>
+    <description>Recent content in C on Compile-moi ça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Fri, 28 Mar 2025 10:48:57 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📚 Les librairies en C : à quoi elles servent ?</title>
+      <link>http://localhost:1313/posts/librairies-en-c/</link>
+      <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/librairies-en-c/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
+Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-définition-rapide&#34;&gt;📖 Définition rapide&lt;/h2&gt;
+&lt;p&gt;Une &lt;strong&gt;librairie&lt;/strong&gt; (ou bibliothèque) en C, c’est un fichier qui &lt;strong&gt;contient des fonctions toutes prêtes&lt;/strong&gt;, qu’on peut utiliser sans les réécrire soi-même.&lt;/p&gt;
+&lt;p&gt;📕 En gros, c&amp;rsquo;est comme un dictionnaire où l&amp;rsquo;ordinateur peut chercher les définitions des fonctions que tu veux utiliser.&lt;/p&gt;
+&lt;p&gt;Tu les ajoutes en début de fichier avec &lt;code&gt;#include &amp;lt;nom.h&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🗒️ Comprendre les types en C simplement</title>
+      <link>http://localhost:1313/posts/types-en-c/</link>
+      <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/types-en-c/</guid>
+      
+      <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
+&lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-les-nombres--int-float-double-etc&#34;&gt;🔢 Les nombres : &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, etc&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;En C, on a plusieurs types pour représenter des nombres, selon &lt;strong&gt;le type de nombre&lt;/strong&gt; (entier, à virgule…) et &lt;strong&gt;l’espace mémoire&lt;/strong&gt; que ça prend.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🔗 Les pointeurs en C : enfin comprendre comment ça marche | Compile-moi ça</title>
+<meta property="og:title" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche | Compile-moi ça" />
+<meta name="twitter:title" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche | Compile-moi ça" />
+<meta itemprop="name" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche | Compile-moi ça" />
+<meta name="application-name" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs.">
+<meta itemprop="description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs." />
+<meta property="og:description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs." />
+<meta name="twitter:description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs." />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="http://localhost:1313/posts/pointeurs-en-c/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-28T10:52:57&#43;0100 />
+    <meta property="article:published_time" content=2025-03-28T10:52:57&#43;0100 />
+    <meta property="og:url" content="http://localhost:1313/posts/pointeurs-en-c/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🔗 Les pointeurs en C : enfin comprendre comment ça marche",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-28",
+        "description": "Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs.",
+        "wordCount":  378 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/pointeurs-en-c/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche">
+  <meta property="og:description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs.">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T10:52:57+01:00">
+    <meta property="article:modified_time" content="2025-03-28T10:52:57+01:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🔗 Les pointeurs en C : enfin comprendre comment ça marche">
+  <meta name="twitter:description" content="Une introduction claire et accessible aux pointeurs en langage C : à quoi ça sert, comment les utiliser et éviter les erreurs.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/pointeurs-en-c/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🔗 Les pointeurs en C : enfin comprendre comment ça marche</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-28T10:52:57&#43;01:00" itemprop="datePublished"> 28 mars 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-cest-quoi-un-pointeur-">🧭 C’est quoi un pointeur ?</a></li>
+    <li><a href="#-quelques-mots-clés-importants">🔎 Quelques mots-clés importants</a></li>
+    <li><a href="#-à-quoi-ça-sert-">🧪 À quoi ça sert ?</a></li>
+    <li><a href="#-les-erreurs-classiques">⚠️ Les erreurs classiques</a></li>
+    <li><a href="#-exemple-concret-avec-malloc">🛠 Exemple concret avec <code>malloc</code></a></li>
+    <li><a href="#-résumé-rapide">🧠 Résumé rapide</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Ah, les pointeurs&hellip; j&rsquo;ai mis tellement de temps avant de vraiment les comprendre 😱<br>
+Mais en vrai, c’est <strong>beaucoup plus simple</strong> qu’on le croit une fois qu’on comprend l’idée de base.</p>
+<hr>
+<h2 id="-cest-quoi-un-pointeur-">🧭 C’est quoi un pointeur ?</h2>
+<p>Un pointeur, c’est <strong>une variable qui contient l’adresse d’une autre variable</strong>.</p>
+<p>📍 Au lieu de stocker une valeur (comme un <code>int</code> ou un <code>char</code>), il <strong>pointe vers</strong> un endroit en mémoire.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>age; <span style="color:#75715e">// ptr contient l’adresse de la variable age donc il ne contient pas directement 30
+</span></span></span></code></pre></div><hr>
+<h2 id="-quelques-mots-clés-importants">🔎 Quelques mots-clés importants</h2>
+<ul>
+<li><code>&amp;</code> → l’opérateur <strong>&ldquo;adresse de&rdquo;</strong> (donne l’adresse d’une variable)</li>
+<li><code>*</code> → l’opérateur <strong>&ldquo;valeur pointée&rdquo;</strong> (déréférencer le pointeur)</li>
+</ul>
+<p>Exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, p);   <span style="color:#75715e">// affiche une adresse mémoire
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">*</span>p);  <span style="color:#75715e">// affiche : 10
+</span></span></span></code></pre></div><blockquote>
+<p>💡 <code>*p</code> = va à l’adresse stockée dans <code>p</code> et lis ce qu’il y a là-bas.<br>
+Si un pointeur est une porte où il y a derrière une valeur alors le <code>*</code> est la poignée qui permet d&rsquo;ouvrir la porte. Et <code>&amp;</code> est l&rsquo;adresse où se trouve la porte.</p></blockquote>
+<hr>
+<h2 id="-à-quoi-ça-sert-">🧪 À quoi ça sert ?</h2>
+<ul>
+<li>🔁 Partager une variable entre plusieurs fonctions sans la recopier</li>
+<li>🧱 Manipuler des tableaux et des strings (qui sont des pointeurs cachés)</li>
+<li>🧠 Gérer la mémoire dynamique (sur la heap avec <code>malloc</code>, <code>free</code>, etc.)</li>
+</ul>
+<hr>
+<h2 id="-les-erreurs-classiques">⚠️ Les erreurs classiques</h2>
+<ul>
+<li>❌ Utiliser un pointeur sans l’avoir initialisé → <code>segfault</code></li>
+<li>❌ Oublier de <code>malloc</code> pour la heap</li>
+<li>❌ Oublier de <code>free</code> → fuite mémoire</li>
+<li>❌ Déréférencer un pointeur nul (<code>NULL</code>)</li>
+</ul>
+<hr>
+<h2 id="-exemple-concret-avec-malloc">🛠 Exemple concret avec <code>malloc</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>n <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>)); <span style="color:#75715e">// alloue de la mémoire sur la heap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">*</span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">*</span>n); <span style="color:#75715e">// affiche : 42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">free</span>(n); <span style="color:#75715e">// on libère !
+</span></span></span></code></pre></div><blockquote>
+<p>📌 <code>malloc</code> retourne un pointeur, donc on le stocke dans un <code>int *</code> ici.</p></blockquote>
+<hr>
+<h2 id="-résumé-rapide">🧠 Résumé rapide</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Symbole</th>
+          <th>Signification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>*</code></td>
+          <td>Accès à la valeur pointée</td>
+      </tr>
+      <tr>
+          <td><code>&amp;</code></td>
+          <td>Adresse d’une variable</td>
+      </tr>
+      <tr>
+          <td><code>int *</code></td>
+          <td>pointeur vers un entier</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>Voilà, t’as survécu aux pointeurs 😄<br>
+Et maintenant tu peux voir à quel point ils sont liés à la <strong>mémoire</strong>, la <strong>stack</strong>, la <strong>heap</strong> et même aux <strong>erreurs</strong> dont on a parlé avant.</p>
+<p>👉 Tu veux t&rsquo;entraîner avec des exemples concrets ? Je te prépare bientôt un article 100% pratique avec des petits exercices ✍️</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
