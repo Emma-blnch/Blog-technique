@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</loc>
-    <lastmod>2025-03-28T10:52:57+01:00</lastmod>
-  </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/</loc>
-    <lastmod>2025-03-28T10:52:57+01:00</lastmod>
+    <lastmod>2025-03-28T11:42:53+01:00</lastmod>
   </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/posts/</loc>
+    <lastmod>2025-03-28T11:42:53+01:00</lastmod>
+  </url><url>
+    <loc>https://emma-blnch.github.io/Blog-technique/posts/printf/</loc>
+    <lastmod>2025-03-28T11:42:53+01:00</lastmod>
+  </url><url>
+    <loc>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</loc>
     <lastmod>2025-03-28T10:52:57+01:00</lastmod>
   </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</loc>
