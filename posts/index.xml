@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Compile-moi ça</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://emma-blnch.github.io/Blog-technique/posts/</link>
     <description>Recent content in Posts on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 10:52:57 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 10:52:57 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🔗 Les pointeurs en C : enfin comprendre comment ça marche</title>
-      <link>http://localhost:1313/posts/pointeurs-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:57 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/pointeurs-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</guid>
       
       <description>&lt;p&gt;Ah, les pointeurs&amp;hellip; j&amp;rsquo;ai mis tellement de temps avant de vraiment les comprendre 😱&lt;br&gt;
 Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on le croit une fois qu’on comprend l’idée de base.&lt;/p&gt;
@@ -34,10 +34,10 @@ Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on 
     
     <item>
       <title>🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables</title>
-      <link>http://localhost:1313/posts/memoire-stack-heap/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:16 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/memoire-stack-heap/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu entends souvent parler de &lt;strong&gt;stack&lt;/strong&gt; (pile) et de &lt;strong&gt;heap&lt;/strong&gt; (tas).&lt;br&gt;
 Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important ?&lt;/p&gt;
@@ -54,10 +54,10 @@ Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important
     
     <item>
       <title>🚨 Messages d’erreur en C : les comprendre pour mieux les corriger</title>
-      <link>http://localhost:1313/posts/messages-erreur/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</link>
       <pubDate>Fri, 28 Mar 2025 10:50:59 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/messages-erreur/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C (ou dans n&amp;rsquo;importe quel autre language d&amp;rsquo;ailleurs), il y a &lt;strong&gt;99% de chances&lt;/strong&gt; que tu te prennes des erreurs en pleine face 😅&lt;br&gt;
 Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mais ils veulent souvent dire des choses simples&lt;/strong&gt;.&lt;/p&gt;
@@ -70,10 +70,10 @@ Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mai
     
     <item>
       <title>📚 Les librairies en C : à quoi elles servent ?</title>
-      <link>http://localhost:1313/posts/librairies-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/librairies-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
 Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
@@ -87,10 +87,10 @@ Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
     
     <item>
       <title>🗒️ Comprendre les types en C simplement</title>
-      <link>http://localhost:1313/posts/types-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
       
-      <guid>http://localhost:1313/posts/types-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</guid>
       
       <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
 &lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
