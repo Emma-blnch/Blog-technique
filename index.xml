@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compile-moi ça</title>
-    <link>https://emma-blnch.github.io/Compile-moi-ca/</link>
+    <link>https://emma-blnch.github.io/Blog-technique/</link>
     <description>Recent content on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 10:52:57 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Compile-moi-ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 10:52:57 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🔗 Les pointeurs en C : enfin comprendre comment ça marche</title>
-      <link>https://emma-blnch.github.io/Compile-moi-ca/posts/pointeurs-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:57 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Compile-moi-ca/posts/pointeurs-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</guid>
       
       <description>&lt;p&gt;Ah, les pointeurs&amp;hellip; j&amp;rsquo;ai mis tellement de temps avant de vraiment les comprendre 😱&lt;br&gt;
 Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on le croit une fois qu’on comprend l’idée de base.&lt;/p&gt;
@@ -34,10 +34,10 @@ Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on 
     
     <item>
       <title>🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables</title>
-      <link>https://emma-blnch.github.io/Compile-moi-ca/posts/memoire-stack-heap/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:16 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Compile-moi-ca/posts/memoire-stack-heap/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu entends souvent parler de &lt;strong&gt;stack&lt;/strong&gt; (pile) et de &lt;strong&gt;heap&lt;/strong&gt; (tas).&lt;br&gt;
 Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important ?&lt;/p&gt;
@@ -54,10 +54,10 @@ Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important
     
     <item>
       <title>🚨 Messages d’erreur en C : les comprendre pour mieux les corriger</title>
-      <link>https://emma-blnch.github.io/Compile-moi-ca/posts/messages-erreur/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</link>
       <pubDate>Fri, 28 Mar 2025 10:50:59 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Compile-moi-ca/posts/messages-erreur/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C (ou dans n&amp;rsquo;importe quel autre language d&amp;rsquo;ailleurs), il y a &lt;strong&gt;99% de chances&lt;/strong&gt; que tu te prennes des erreurs en pleine face 😅&lt;br&gt;
 Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mais ils veulent souvent dire des choses simples&lt;/strong&gt;.&lt;/p&gt;
@@ -70,10 +70,10 @@ Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mai
     
     <item>
       <title>📚 Les librairies en C : à quoi elles servent ?</title>
-      <link>https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Compile-moi-ca/posts/librairies-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
 Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
@@ -87,16 +87,31 @@ Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
     
     <item>
       <title>🗒️ Comprendre les types en C simplement</title>
-      <link>https://emma-blnch.github.io/Compile-moi-ca/posts/types-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Compile-moi-ca/posts/types-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</guid>
       
       <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
 &lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-les-nombres--int-float-double-etc&#34;&gt;🔢 Les nombres : &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, etc&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;En C, on a plusieurs types pour représenter des nombres, selon &lt;strong&gt;le type de nombre&lt;/strong&gt; (entier, à virgule…) et &lt;strong&gt;l’espace mémoire&lt;/strong&gt; que ça prend.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>À Propos</title>
+      <link>https://emma-blnch.github.io/Blog-technique/about/</link>
+      <pubDate>Wed, 26 Mar 2025 11:08:31 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/about/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-qui-je-suis&#34;&gt;👋 Qui je suis&lt;/h2&gt;
+&lt;p&gt;Après plusieurs années passionnantes dans l&amp;rsquo;audiovisuel 🎥, j’ai choisi de réorienter ma carrière vers le développement logiciel 🖥️. Une décision portée par ma curiosité insatiable et mon envie de relever de nouveaux défis.&lt;/p&gt;
+&lt;p&gt;🎓 Actuellement en formation à l’école &lt;strong&gt;42 Paris&lt;/strong&gt;, j’apprends la programmation en &lt;strong&gt;C&lt;/strong&gt;, le &lt;strong&gt;développement web&lt;/strong&gt; et travaille sur des projets concrets, seule ou en équipe.&lt;/p&gt;
+&lt;p&gt;🎨 Je m’oriente progressivement vers le &lt;strong&gt;développement front-end&lt;/strong&gt;, là où je peux mettre à profit :&lt;/p&gt;</description>
       
     </item>
     
