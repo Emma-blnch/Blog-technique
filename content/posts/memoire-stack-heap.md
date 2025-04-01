@@ -89,7 +89,7 @@ free(ptr); // bien penser à free sinon ➡️ fuite mémoire !
 ---
 
 Voilà, maintenant tu sais où vont tes variables quand tu les déclares ✨  
-Prochaine étape : les **pointeurs** 🔗 (et tu vas voir, avec ce qu’on vient de voir, c’est beaucoup plus clair 😉)
+Prochaine étape : les [pointeurs](./pointeurs-en-c.md) 🔗 (et tu vas voir, avec ce qu’on vient de voir, c’est beaucoup plus clair 😉)
 
 ---
 

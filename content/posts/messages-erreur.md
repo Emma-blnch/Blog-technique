@@ -94,4 +94,4 @@ char *str = "42"; // ok !
 ---
 
 Tu veux apprendre à éviter certaines erreurs à la source ?  
-👉 Va lire mon article sur les **librairies** et celui sur la **mémoire** (stack/heap) !
+👉 Va lire [mon article](./librairies-en-c.md) sur les **librairies** et celui sur la **mémoire** (stack/heap) !

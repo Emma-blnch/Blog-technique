@@ -181,4 +181,4 @@ jours_semaine = 8; // ❌ Erreur : variable constante
 ---
 
 J’espère que ce petit tour t’a éclairé 🔦  
-Tu veux aller plus loin ? Un article sur les **pointeurs** est déjà disponible ! 🔗
+Tu veux aller plus loin ? Un [article](./pointeurs-en-c.md) sur les **pointeurs** est déjà disponible ! 🔗

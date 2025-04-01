@@ -6,7 +6,47 @@
     <description>Recent content in Posts on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 16:59:14 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 13:51:02 +0200</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🧹 Clean Code : écrire du code propre dès le début</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</link>
+      <pubDate>Tue, 01 Apr 2025 13:51:02 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</guid>
+      
+      <description>&lt;p&gt;Quand tu commences à coder, tu cherches souvent à &lt;strong&gt;faire fonctionner ton programme&lt;/strong&gt;.&lt;br&gt;
+Mais avec le temps, tu réalises que faire &lt;strong&gt;fonctionner&lt;/strong&gt; ne suffit pas : il faut que ton code soit &lt;strong&gt;compréhensible&lt;/strong&gt;, &lt;strong&gt;structuré&lt;/strong&gt; et &lt;strong&gt;facile à maintenir&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;C’est là qu’intervient le concept de &lt;strong&gt;clean code&lt;/strong&gt; ✨&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-doù-vient-ce-terme-&#34;&gt;📖 D’où vient ce terme ?&lt;/h2&gt;
+&lt;p&gt;Le terme &amp;ldquo;clean code&amp;rdquo; vient principalement du livre &lt;em&gt;Clean Code: A Handbook of Agile Software Craftsmanship&lt;/em&gt; écrit par &lt;strong&gt;Robert C. Martin&lt;/strong&gt; (alias Uncle Bob).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>📁 Organiser un projet C : fichiers, dossiers, .h et Makefile</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/organisation/</link>
+      <pubDate>Tue, 01 Apr 2025 13:40:04 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/organisation/</guid>
+      
+      <description>&lt;p&gt;Quand on commence à coder en C, on met souvent &lt;strong&gt;tout dans un seul fichier &lt;code&gt;.c&lt;/code&gt;&lt;/strong&gt;.&lt;br&gt;
+Et au début… ça fonctionne ! Mais plus ton projet grandit, plus &lt;strong&gt;tu risques de te perdre&lt;/strong&gt; si tu ne l’organises pas un minimum 😵‍💫&lt;/p&gt;
+&lt;p&gt;Dans cet article, je t’explique &lt;strong&gt;comment structurer ton code proprement&lt;/strong&gt; : header (&lt;code&gt;.h&lt;/code&gt;), fichiers séparés, Makefile… et pourquoi c’est une bonne idée !&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-pourquoi-organiser-son-projet-&#34;&gt;🧠 Pourquoi organiser son projet ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pour &lt;strong&gt;se relire plus facilement&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;travailler à plusieurs&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;rester zen quand ton projet passe de 100 lignes à 2000&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;réutiliser ton code plus facilement&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-les-fichiers-h-header&#34;&gt;🔖 Les fichiers &lt;code&gt;.h&lt;/code&gt; (header)&lt;/h2&gt;
+&lt;p&gt;Un &lt;strong&gt;header&lt;/strong&gt; sert à &lt;strong&gt;déclarer ce que tu vas utiliser dans d’autres fichiers&lt;/strong&gt; :&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>📍 La fonction main : explication et utilité</title>
       <link>https://emma-blnch.github.io/Blog-technique/posts/main/</link>

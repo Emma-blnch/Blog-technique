@@ -158,4 +158,4 @@ C’est pour ça qu’on peut écrire `argv[i]` :
 Sans `main()`, ton programme n’a **pas de point d’entrée**.  
 C’est la **colonne vertébrale** de chaque code en C 🧠
 
-👉 Si tu veux mieux comprendre ce `char **argv`, va jeter un œil à mon article sur les **pointeurs** et les **chaînes de caractères** !
+👉 Si tu veux mieux comprendre ce `char **argv`, va jeter un œil à [mon article](./pointeurs-en-c.md) sur les **pointeurs** et les **chaînes de caractères** !
