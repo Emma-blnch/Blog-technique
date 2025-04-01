@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🗒️ Comprendre les types en C simplement | Compile-moi ça</title>
+<meta property="og:title" content="🗒️ Comprendre les types en C simplement | Compile-moi ça" />
+<meta name="twitter:title" content="🗒️ Comprendre les types en C simplement | Compile-moi ça" />
+<meta itemprop="name" content="🗒️ Comprendre les types en C simplement | Compile-moi ça" />
+<meta name="application-name" content="🗒️ Comprendre les types en C simplement | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="Petite intro claire et illustrée aux types de base en langage C">
+<meta itemprop="description" content="Petite intro claire et illustrée aux types de base en langage C" />
+<meta property="og:description" content="Petite intro claire et illustrée aux types de base en langage C" />
+<meta name="twitter:description" content="Petite intro claire et illustrée aux types de base en langage C" />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="https://emma-blnch.github.io/Blog-technique/posts/types-en-c/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-03-28T10:46:46&#43;0100 />
+    <meta property="article:published_time" content=2025-03-28T10:46:46&#43;0100 />
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/types-en-c/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🗒️ Comprendre les types en C simplement",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-03-28",
+        "description": "Petite intro claire et illustrée aux types de base en langage C",
+        "wordCount":  765 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-03-28",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/types-en-c/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="🗒️ Comprendre les types en C simplement">
+  <meta property="og:description" content="Petite intro claire et illustrée aux types de base en langage C">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-28T10:46:46+01:00">
+    <meta property="article:modified_time" content="2025-03-28T10:46:46+01:00">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Programmation">
+    <meta property="article:tag" content="Débutant">
+    <meta property="article:tag" content="Types">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🗒️ Comprendre les types en C simplement">
+  <meta name="twitter:description" content="Petite intro claire et illustrée aux types de base en langage C">
+
+
+    
+
+    <link rel="canonical" href="https://emma-blnch.github.io/Blog-technique/posts/types-en-c/">
+    <link href="/Blog-technique/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/Blog-technique/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Blog-technique/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Blog-technique/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Blog-technique/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/Blog-technique/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/Blog-technique/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://emma-blnch.github.io/Blog-technique/site.webmanifest">
+
+<meta name="msapplication-config" content="/Blog-technique/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/Blog-technique/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/Blog-technique/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://emma-blnch.github.io/Blog-technique/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/Blog-technique/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🗒️ Comprendre les types en C simplement</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-03-28T10:46:46&#43;01:00" itemprop="datePublished"> 28 mars 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-les-nombres--int-float-double-etc">🔢 Les nombres : <code>int</code>, <code>float</code>, <code>double</code>, etc&hellip;</a></li>
+    <li><a href="#-char--une-lettre-un-symbole-un-caractère">🔤 <code>char</code> : une lettre, un symbole, un caractère</a></li>
+    <li><a href="#-char--ou-string--une-suite-de-caractères">🧵 <code>char *</code> ou &ldquo;string&rdquo; : une suite de caractères</a></li>
+    <li><a href="#-void--le-vide">🚫 <code>void</code> : le vide</a></li>
+    <li><a href="#-bool--vrai-ou-faux-">🔁 <code>bool</code> : vrai ou faux ?</a></li>
+    <li><a href="#-const--on-ne-touche-plus-">🔒 <code>const</code> : on ne touche plus !</a></li>
+    <li><a href="#-résumé-rapide">🧠 Résumé rapide</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Quand on commence à coder en C, on peut vite tomber sur la notion de &ldquo;types&rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&rsquo;est gagner <strong>en clarté</strong> et <strong>en précision</strong> dans ton code 💡</p>
+<p>Voici un petit tour d’horizon des types de base que j&rsquo;utilise tout le temps en C 🧵</p>
+<hr>
+<h2 id="-les-nombres--int-float-double-etc">🔢 Les nombres : <code>int</code>, <code>float</code>, <code>double</code>, etc&hellip;</h2>
+<p>En C, on a plusieurs types pour représenter des nombres, selon <strong>le type de nombre</strong> (entier, à virgule…) et <strong>l’espace mémoire</strong> que ça prend.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>int</code></td>
+          <td>Nombre entier (positif ou négatif)</td>
+      </tr>
+      <tr>
+          <td><code>float</code></td>
+          <td>Nombre à virgule (précision ~6 chiffres)</td>
+      </tr>
+      <tr>
+          <td><code>double</code></td>
+          <td>Nombre à virgule avec plus de précision (~15 chiffres)</td>
+      </tr>
+      <tr>
+          <td><code>unsigned</code></td>
+          <td>Empêche les valeurs négatives</td>
+      </tr>
+      <tr>
+          <td><code>short</code>, <code>long</code>, <code>long long</code></td>
+          <td>Changent la taille mémoire (et donc la plage de valeurs)</td>
+      </tr>
+  </tbody>
+</table>
+<p>Exemples :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> note <span style="color:#f92672">=</span> <span style="color:#ae81ff">18.5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> points <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">long</span> big_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234567890</span>;
+</span></span></code></pre></div><blockquote>
+<p>⚠️ En C, une virgule s’écrit avec un point : <code>3.14</code>, pas <code>3,14</code></p></blockquote>
+<p>Pour afficher un nombre tu vas devoir utiliser <code>%d</code> pour un int, <code>%u</code> pour un unsigned, <code>%ld</code> pour un long int par exemple.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> negatif <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">54</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> positif <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">long</span> big_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234567890</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, negatif);  <span style="color:#75715e">// affiche : -54
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%u</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, positif);  <span style="color:#75715e">// affiche : 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%ld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, big_number);  <span style="color:#75715e">// affiche : 1234567890
+</span></span></span></code></pre></div><p>Tu utiliseras les différents types de nombre selon la situation et ce que tu veux en faire !</p>
+<p>Si tu veux un nombre forcement positif, tu te tourneras vers le <em>unsigned int</em> par exemple.
+Si tu veux faire un calcul de decimal, tu choisiras surement un float ou un double.</p>
+<p>💭 A toi d&rsquo;adapter et de choisir selon ton programme et ce que tu attends.</p>
+<hr>
+<h2 id="-char--une-lettre-un-symbole-un-caractère">🔤 <code>char</code> : une lettre, un symbole, un caractère</h2>
+<p>Un <code>char</code> (pour <em>character</em>) permet de stocker <strong>un seul caractère</strong> : une lettre, un chiffre, un symbole&hellip;</p>
+<p>Il faut le mettre entre <strong>guillemets simples</strong> <code>'A'</code>, <code>'3'</code>, <code>'!'</code>.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> lettre <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;E&#39;</span>;
+</span></span></code></pre></div><p>est correct.<br>
+Mais :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> lettres <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>ABC<span style="color:#960050;background-color:#1e0010">&#39;</span>;
+</span></span></code></pre></div><p>est faux ! Tu ne peux mettre qu&rsquo;une seule lettre parce que le type char n&rsquo;a de place en mémoire que pour un seul caractere.</p>
+<blockquote>
+<p>✅ 1 <code>char</code> = 1 octet</p></blockquote>
+<p>Pour afficher avec printf un char tu vas devoir utiliser <code>%c</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> lettre <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%c</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, lettre);  <span style="color:#75715e">// affiche : A
+</span></span></span></code></pre></div><p>Mais tu peux aussi utiliser <code>%d</code>, comme pour les nombres ! 😮</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> lettre <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, lettre); <span style="color:#75715e">// affiche : 65
+</span></span></span></code></pre></div><blockquote>
+<p>✅ Chaque caractère correspond à un code (un chiffre) dans la table ASCII (cette table sera votre meilleur ami)</p></blockquote>
+<hr>
+<h2 id="-char--ou-string--une-suite-de-caractères">🧵 <code>char *</code> ou &ldquo;string&rdquo; : une suite de caractères</h2>
+<p>Il n’existe pas de <code>string</code> en C comme en Python ou JS. En réalité, une chaîne de caractères est juste un <strong>tableau de <code>char</code></strong> terminé par un <strong>caractère nul <code>\0</code></strong>.</p>
+<p>On la met entre <strong>guillemets doubles</strong> <code>&quot;Bonjour&quot;</code>.</p>
+<p>Pour afficher une string avec printf tu vas devoir utiliser <code>%s</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>phrase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, phrase);  <span style="color:#75715e">// affiche : Hello world!
+</span></span></span></code></pre></div><blockquote>
+<p>💡 En mémoire, <code>&quot;Hello&quot;</code> c’est en réalité séparé caractère par caractère (avec 1 octet par caractère) : <code>'H'</code>, <code>'e'</code>, <code>'l'</code>, <code>'l'</code>, <code>'o'</code>, <code>'\0'</code></p></blockquote>
+<hr>
+<h2 id="-void--le-vide">🚫 <code>void</code> : le vide</h2>
+<p><code>void</code> signifie que <strong>la fonction ne retourne rien</strong> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dire_bonjour</span>(<span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Salut !</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Contrairement par exemple à :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">dire_bonjour</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str) {
+</span></span><span style="display:flex;"><span>    str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bonjour !</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (str);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ça n&#39;affichera pas &#34;bonjour !&#34; mais si on appelle cette fonction ailleurs on pourra l&#39;afficher
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>On peut aussi s’en servir pour déclarer un <strong>pointeur sans type précis</strong> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">=</span> NULL;
+</span></span></code></pre></div><hr>
+<h2 id="-bool--vrai-ou-faux-">🔁 <code>bool</code> : vrai ou faux ?</h2>
+<p>Un booléen permet de représenter une <strong>condition vraie ou fausse</strong>.</p>
+<p>Il faut inclure une librairie spéciale (plus de détails dans mon article sur les librairies !) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdbool.h&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><p>Ensuite, on peut utiliser <code>true</code> ou <code>false</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> est_allume <span style="color:#f92672">=</span> true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (est_allume) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;La lumière est allumée !</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><code>false</code> vaut 0, <code>true</code> vaut 1</p></blockquote>
+<hr>
+<h2 id="-const--on-ne-touche-plus-">🔒 <code>const</code> : on ne touche plus !</h2>
+<p>Le mot-clé <code>const</code> empêche de <strong>modifier une variable après sa déclaration</strong>.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> jours_semaine <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+</span></span><span style="display:flex;"><span>jours_semaine <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>; <span style="color:#75715e">// ❌ Erreur : variable constante
+</span></span></span></code></pre></div><blockquote>
+<p>🧠 Tu peux aussi avoir des pointeurs <code>const</code>, mais ça c’est pour plus tard 😉</p></blockquote>
+<hr>
+<h2 id="-résumé-rapide">🧠 Résumé rapide</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>À quoi ça sert ?</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>char</code></td>
+          <td>Un seul caractère</td>
+      </tr>
+      <tr>
+          <td><code>char *</code></td>
+          <td>Une chaîne (string)</td>
+      </tr>
+      <tr>
+          <td><code>int</code> / <code>float</code> / <code>double</code></td>
+          <td>Des nombres</td>
+      </tr>
+      <tr>
+          <td><code>void</code></td>
+          <td>Rien du tout 😄</td>
+      </tr>
+      <tr>
+          <td><code>bool</code></td>
+          <td>Vrai ou faux</td>
+      </tr>
+      <tr>
+          <td><code>const</code></td>
+          <td>Valeur figée, non modifiable</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>J’espère que ce petit tour t’a éclairé 🔦<br>
+Tu veux aller plus loin ? Un <a href="/Blog-technique/posts/pointeurs-en-c/">article</a> sur les <strong>pointeurs</strong> est déjà disponible ! 🔗</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://emma-blnch.github.io/Blog-technique/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

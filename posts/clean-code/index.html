@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr-fr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">🧹 Clean Code : écrire du code propre dès le début | Compile-moi ça</title>
+<meta property="og:title" content="🧹 Clean Code : écrire du code propre dès le début | Compile-moi ça" />
+<meta name="twitter:title" content="🧹 Clean Code : écrire du code propre dès le début | Compile-moi ça" />
+<meta itemprop="name" content="🧹 Clean Code : écrire du code propre dès le début | Compile-moi ça" />
+<meta name="application-name" content="🧹 Clean Code : écrire du code propre dès le début | Compile-moi ça" />
+<meta property="og:site_name" content="Compile-moi ça" />
+
+<meta name="description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?">
+<meta itemprop="description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?" />
+<meta property="og:description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?" />
+<meta name="twitter:description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?" />
+
+<meta property="og:locale" content="fr-fr" />
+<meta name="language" content="fr-fr" />
+
+  <link rel="alternate" hreflang="fr-fr" href="https://emma-blnch.github.io/Blog-technique/posts/clean-code/" title="French" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-04-01T13:51:02&#43;0200 />
+    <meta property="article:published_time" content=2025-04-01T13:51:02&#43;0200 />
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/clean-code/" />
+
+    
+    <meta property="og:article:author" content="Emma B" />
+    <meta property="article:author" content="Emma B" />
+    <meta name="author" content="Emma B" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "🧹 Clean Code : écrire du code propre dès le début",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-04-01",
+        "description": "C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?",
+        "wordCount":  641 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-04-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Compile-moi ça"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.145.0">
+
+    
+    <meta property="og:url" content="https://emma-blnch.github.io/Blog-technique/posts/clean-code/">
+  <meta property="og:site_name" content="Compile-moi ça">
+  <meta property="og:title" content="🧹 Clean Code : écrire du code propre dès le début">
+  <meta property="og:description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?">
+  <meta property="og:locale" content="fr_fr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-01T13:51:02+02:00">
+    <meta property="article:modified_time" content="2025-04-01T13:51:02+02:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🧹 Clean Code : écrire du code propre dès le début">
+  <meta name="twitter:description" content="C’est quoi le clean code ? À quoi ça sert ? Et comment l’appliquer concrètement quand on apprend le C ?">
+
+
+    
+
+    <link rel="canonical" href="https://emma-blnch.github.io/Blog-technique/posts/clean-code/">
+    <link href="/Blog-technique/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/Blog-technique/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Blog-technique/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Blog-technique/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Blog-technique/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/Blog-technique/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/Blog-technique/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://emma-blnch.github.io/Blog-technique/site.webmanifest">
+
+<meta name="msapplication-config" content="/Blog-technique/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/Blog-technique/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/Blog-technique/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://emma-blnch.github.io/Blog-technique/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Accueil</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/Blog-technique/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/Blog-technique/about/">
+                        À propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">🧹 Clean Code : écrire du code propre dès le début</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-04-01T13:51:02&#43;02:00" itemprop="datePublished"> 1 avr. 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table des matières</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-doù-vient-ce-terme-">📖 D’où vient ce terme ?</a></li>
+    <li><a href="#-cest-quoi-le-clean-code-">🧠 C’est quoi le clean code ?</a></li>
+    <li><a href="#-pourquoi-cest-important-">🎯 Pourquoi c’est important ?</a></li>
+    <li><a href="#-principes-simples-pour-débuter">✨ Principes simples pour débuter</a>
+      <ul>
+        <li><a href="#-1-donne-des-noms-clairs-à-tes-variables-et-fonctions">🧠 1. Donne des <strong>noms clairs</strong> à tes variables et fonctions</a></li>
+        <li><a href="#-2-une-fonction--une-tâche">✂️ 2. Une fonction = une tâche</a></li>
+        <li><a href="#-3-évite-le-code-dupliqué">🔁 3. Évite le code dupliqué</a></li>
+        <li><a href="#-4-structure-ton-code">🧱 4. Structure ton code</a></li>
+        <li><a href="#-5-commente-avec-intelligence">🗒️ 5. Commente avec intelligence</a></li>
+      </ul>
+    </li>
+    <li><a href="#-ce-que-le-clean-code-nest-pas">⚠️ Ce que le clean code n’est pas</a></li>
+    <li><a href="#-résumé">🧠 Résumé</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Quand tu commences à coder, tu cherches souvent à <strong>faire fonctionner ton programme</strong>.<br>
+Mais avec le temps, tu réalises que faire <strong>fonctionner</strong> ne suffit pas : il faut que ton code soit <strong>compréhensible</strong>, <strong>structuré</strong> et <strong>facile à maintenir</strong>.</p>
+<p>C’est là qu’intervient le concept de <strong>clean code</strong> ✨</p>
+<hr>
+<h2 id="-doù-vient-ce-terme-">📖 D’où vient ce terme ?</h2>
+<p>Le terme &ldquo;clean code&rdquo; vient principalement du livre <em>Clean Code: A Handbook of Agile Software Craftsmanship</em> écrit par <strong>Robert C. Martin</strong> (alias Uncle Bob).</p>
+<p>Dans ce livre devenu culte, il explique que <strong>le code doit être lisible, compréhensible et élégant</strong>.<br>
+Pas besoin d’être expert·e pour appliquer ces principes : tu peux commencer <strong>dès aujourd’hui</strong>.</p>
+<blockquote>
+<p>Tu peux facilement trouver ce livre en ligne, je te conseille vivement de le lire !</p></blockquote>
+<hr>
+<h2 id="-cest-quoi-le-clean-code-">🧠 C’est quoi le clean code ?</h2>
+<p>Un code &ldquo;clean&rdquo; c’est un code :</p>
+<ul>
+<li>📚 <strong>Lisible</strong> : tu comprends ce qu’il fait sans effort</li>
+<li>👀 <strong>Prévisible</strong> : tu n’as pas de surprise en lisant une fonction</li>
+<li>🛠️ <strong>Modifiable facilement</strong> : tu peux corriger un bug ou ajouter une fonctionnalité sans tout casser</li>
+</ul>
+<p>Et surtout : <strong>tu peux le relire sans souffrir 😅</strong></p>
+<hr>
+<h2 id="-pourquoi-cest-important-">🎯 Pourquoi c’est important ?</h2>
+<ul>
+<li>Tu écris du code pour les autres (travail d&rsquo;équipe)… <strong>et pour ton toi du futur</strong></li>
+<li>Un code clean est <strong>plus facile à maintenir</strong></li>
+<li>Il réduit les bugs</li>
+<li>Il est <strong>plus simple à tester</strong></li>
+<li>Il te fait progresser dans ta façon de penser comme un·e dev</li>
+</ul>
+<hr>
+<h2 id="-principes-simples-pour-débuter">✨ Principes simples pour débuter</h2>
+<h3 id="-1-donne-des-noms-clairs-à-tes-variables-et-fonctions">🧠 1. Donne des <strong>noms clairs</strong> à tes variables et fonctions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Pas clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f</span>(<span style="color:#66d9ef">int</span> a) { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">afficher_message</span>(<span style="color:#66d9ef">int</span> nombre_essais) { ... }
+</span></span></code></pre></div><h3 id="-2-une-fonction--une-tâche">✂️ 2. Une fonction = une tâche</h3>
+<p>Chaque fonction doit faire <strong>une chose</strong>, et bien la faire.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Pas clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fonction</span>(<span style="color:#66d9ef">int</span> choix);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fonction2</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">afficher_menu</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lire_choix_utilisateur</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">traiter_choix</span>(<span style="color:#66d9ef">int</span> choix);
+</span></span></code></pre></div><h3 id="-3-évite-le-code-dupliqué">🔁 3. Évite le code dupliqué</h3>
+<p>Si tu copies-colles du code, c’est souvent qu’il faut créer une fonction dédiée.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// Pas clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Quel est votre age ?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>age);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Vous avez %d ans, vous etes donc mineur</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, age);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">65</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Vous avez %d ans, vous etes donc majeur</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, age);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Vous avez %d ans, vous etes donc senior</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, age);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Quel est votre age ?</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, age);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">afficher_message</span>(age, <span style="color:#e6db74">&#34;mineur&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">65</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">afficher_message</span>(age, <span style="color:#e6db74">&#34;senior&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">afficher_message</span>(age, <span style="color:#e6db74">&#34;adulte&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="-4-structure-ton-code">🧱 4. Structure ton code</h3>
+<ul>
+<li>Utilise des <strong>espaces</strong>, des <strong>indentations</strong> régulières</li>
+<li>Regroupe tes fonctions par rôle</li>
+<li>Organise ton projet (cf. mon article précédent 😉)</li>
+</ul>
+<h3 id="-5-commente-avec-intelligence">🗒️ 5. Commente avec intelligence</h3>
+<ul>
+<li>Ne commente pas l’évident :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>i<span style="color:#f92672">++</span>; <span style="color:#75715e">// incrémente i
+</span></span></span></code></pre></div></li>
+<li>Commente ce qui est <strong>complexe, logique, non intuitif</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// On utilise une boucle while car on ne connaît pas d’avance le nombre d’éléments à traiter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (liste <span style="color:#f92672">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">traiter_element</span>(liste<span style="color:#f92672">-&gt;</span>valeur);
+</span></span><span style="display:flex;"><span>  liste <span style="color:#f92672">=</span> liste<span style="color:#f92672">-&gt;</span>suivant;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<blockquote>
+<p>Un bon commentaire ne répète pas le code, il éclaire le pourquoi.</p></blockquote>
+<hr>
+<h2 id="-ce-que-le-clean-code-nest-pas">⚠️ Ce que le clean code n’est pas</h2>
+<ul>
+<li>❌ Ce n’est <strong>pas</strong> écrire un code parfait du premier coup</li>
+<li>❌ Ce n’est <strong>pas</strong> forcément court ou “stylé”</li>
+<li>❌ Ce n’est <strong>pas</strong> réservé aux dev seniors</li>
+</ul>
+<blockquote>
+<p>Le clean code, c’est <strong>penser à la personne qui va lire ton code demain.</strong></p></blockquote>
+<hr>
+<h2 id="-résumé">🧠 Résumé</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Mauvaise pratique</th>
+          <th>Version clean</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>int f()</code></td>
+          <td><code>int additionner(int a, int b)</code></td>
+      </tr>
+      <tr>
+          <td>Fonction de 50 lignes</td>
+          <td>Fonctions courtes et claires</td>
+      </tr>
+      <tr>
+          <td>Code dupliqué</td>
+          <td>Fonction réutilisable</td>
+      </tr>
+      <tr>
+          <td>Trop de commentaires</td>
+          <td>Juste ce qu’il faut, là où il faut</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>Tu débutes ? Alors c’est <strong>le meilleur moment</strong> pour prendre de bonnes habitudes 🧼<br>
+Même si ton code est imparfait, pense toujours à une chose : <strong>&ldquo;Est-ce que je pourrais le relire dans 2 semaines et tout comprendre ?&rdquo;</strong></p>
+<p>👉 Pour aller plus loin, regarde aussi comment <a href="/Blog-technique/posts/organisation/">organiser ton projet</a> pour éviter le chaos dès le début 😄</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+</div>
+    <small class="footer_copyright">
+        © 2025 Emma B.
+        Propulsé par <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Aller en haut" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://emma-blnch.github.io/Blog-technique/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

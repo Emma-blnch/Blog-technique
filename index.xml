@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compile-moi ça</title>
+    <link>https://emma-blnch.github.io/Blog-technique/</link>
+    <description>Recent content on Compile-moi ça</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Tue, 01 Apr 2025 13:51:02 +0200</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🧹 Clean Code : écrire du code propre dès le début</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</link>
+      <pubDate>Tue, 01 Apr 2025 13:51:02 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</guid>
+      
+      <description>&lt;p&gt;Quand tu commences à coder, tu cherches souvent à &lt;strong&gt;faire fonctionner ton programme&lt;/strong&gt;.&lt;br&gt;
+Mais avec le temps, tu réalises que faire &lt;strong&gt;fonctionner&lt;/strong&gt; ne suffit pas : il faut que ton code soit &lt;strong&gt;compréhensible&lt;/strong&gt;, &lt;strong&gt;structuré&lt;/strong&gt; et &lt;strong&gt;facile à maintenir&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;C’est là qu’intervient le concept de &lt;strong&gt;clean code&lt;/strong&gt; ✨&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-doù-vient-ce-terme-&#34;&gt;📖 D’où vient ce terme ?&lt;/h2&gt;
+&lt;p&gt;Le terme &amp;ldquo;clean code&amp;rdquo; vient principalement du livre &lt;em&gt;Clean Code: A Handbook of Agile Software Craftsmanship&lt;/em&gt; écrit par &lt;strong&gt;Robert C. Martin&lt;/strong&gt; (alias Uncle Bob).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>📁 Organiser un projet C : fichiers, dossiers, .h et Makefile</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/organisation/</link>
+      <pubDate>Tue, 01 Apr 2025 13:40:04 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/organisation/</guid>
+      
+      <description>&lt;p&gt;Quand on commence à coder en C, on met souvent &lt;strong&gt;tout dans un seul fichier &lt;code&gt;.c&lt;/code&gt;&lt;/strong&gt;.&lt;br&gt;
+Et au début… ça fonctionne ! Mais plus ton projet grandit, plus &lt;strong&gt;tu risques de te perdre&lt;/strong&gt; si tu ne l’organises pas un minimum 😵‍💫&lt;/p&gt;
+&lt;p&gt;Dans cet article, je t’explique &lt;strong&gt;comment structurer ton code proprement&lt;/strong&gt; : header (&lt;code&gt;.h&lt;/code&gt;), fichiers séparés, Makefile… et pourquoi c’est une bonne idée !&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-pourquoi-organiser-son-projet-&#34;&gt;🧠 Pourquoi organiser son projet ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pour &lt;strong&gt;se relire plus facilement&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;travailler à plusieurs&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;rester zen quand ton projet passe de 100 lignes à 2000&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Pour &lt;strong&gt;réutiliser ton code plus facilement&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-les-fichiers-h-header&#34;&gt;🔖 Les fichiers &lt;code&gt;.h&lt;/code&gt; (header)&lt;/h2&gt;
+&lt;p&gt;Un &lt;strong&gt;header&lt;/strong&gt; sert à &lt;strong&gt;déclarer ce que tu vas utiliser dans d’autres fichiers&lt;/strong&gt; :&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>📍 La fonction main : explication et utilité</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/main/</link>
+      <pubDate>Fri, 28 Mar 2025 16:59:14 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/main/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C, &lt;strong&gt;tout commence par une seule fonction&lt;/strong&gt; : &lt;code&gt;main()&lt;/code&gt;&lt;br&gt;
+C’est elle que le système appelle &lt;strong&gt;en premier&lt;/strong&gt; quand il lance ton programme.&lt;/p&gt;
+&lt;p&gt;Mais pourquoi est-elle si spéciale ? Et que veulent dire ses arguments &lt;code&gt;int argc&lt;/code&gt; et &lt;code&gt;char **argv&lt;/code&gt; ?&lt;br&gt;
+Je t’explique tout 👇&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-main--la-porte-dentrée&#34;&gt;🚪 &lt;code&gt;main()&lt;/code&gt; : la porte d’entrée&lt;/h2&gt;
+&lt;p&gt;Quand tu exécutes un programme C, &lt;strong&gt;le système cherche automatiquement une fonction appelée &lt;code&gt;main()&lt;/code&gt;&lt;/strong&gt;.&lt;br&gt;
+Sans elle, ton programme ne sait pas &lt;strong&gt;par où commencer&lt;/strong&gt; → tu auras une erreur à la compilation.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🖨️ Printf : affichage, formats et coulisses</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/printf/</link>
+      <pubDate>Fri, 28 Mar 2025 11:42:53 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/printf/</guid>
+      
+      <description>&lt;p&gt;&lt;code&gt;printf&lt;/code&gt; est sûrement la &lt;strong&gt;fonction la plus utilisée&lt;/strong&gt; en C pour afficher des choses à l’écran.&lt;br&gt;
+Mais derrière sa simplicité apparente, elle cache pas mal de subtilités 🔍&lt;/p&gt;
+&lt;p&gt;Dans cet article, on va voir &lt;strong&gt;comment utiliser printf&lt;/strong&gt;, &lt;strong&gt;les formats les plus utiles&lt;/strong&gt;, &lt;strong&gt;les erreurs à éviter&lt;/strong&gt;, et même &lt;strong&gt;ce qui se passe en coulisses&lt;/strong&gt; quand tu l’appelles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-printf-&#34;&gt;🧁 C’est quoi &lt;code&gt;printf&lt;/code&gt; ?&lt;/h2&gt;
+&lt;p&gt;La fonction &lt;code&gt;printf()&lt;/code&gt; vient de la librairie standard &lt;code&gt;stdio.h&lt;/code&gt;.&lt;br&gt;
+Elle te permet &lt;strong&gt;d’afficher du texte ou des valeurs&lt;/strong&gt; dans le terminal.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🔗 Les pointeurs en C : enfin comprendre comment ça marche</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</link>
+      <pubDate>Fri, 28 Mar 2025 10:52:57 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</guid>
+      
+      <description>&lt;p&gt;Ah, les pointeurs&amp;hellip; j&amp;rsquo;ai mis tellement de temps avant de vraiment les comprendre 😱&lt;br&gt;
+Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on le croit une fois qu’on comprend l’idée de base.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-un-pointeur-&#34;&gt;🧭 C’est quoi un pointeur ?&lt;/h2&gt;
+&lt;p&gt;Un pointeur, c’est &lt;strong&gt;une variable qui contient l’adresse d’une autre variable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;📍 Au lieu de stocker une valeur (comme un &lt;code&gt;int&lt;/code&gt; ou un &lt;code&gt;char&lt;/code&gt;), il &lt;strong&gt;pointe vers&lt;/strong&gt; un endroit en mémoire.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; age &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;age; &lt;span style=&#34;color:#75715e&#34;&gt;// ptr contient l’adresse de la variable age donc il ne contient pas directement 30
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-quelques-mots-clés-importants&#34;&gt;🔎 Quelques mots-clés importants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt; → l’opérateur &lt;strong&gt;&amp;ldquo;adresse de&amp;rdquo;&lt;/strong&gt; (donne l’adresse d’une variable)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; → l’opérateur &lt;strong&gt;&amp;ldquo;valeur pointée&amp;rdquo;&lt;/strong&gt; (déréférencer le pointeur)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</link>
+      <pubDate>Fri, 28 Mar 2025 10:52:16 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C, tu entends souvent parler de &lt;strong&gt;stack&lt;/strong&gt; (pile) et de &lt;strong&gt;heap&lt;/strong&gt; (tas).&lt;br&gt;
+Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important ?&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-quest-ce-que-la-mémoire-en-c-&#34;&gt;🧱 Qu’est-ce que la mémoire en C ?&lt;/h2&gt;
+&lt;p&gt;Quand tu exécutes un programme, ton ordinateur lui réserve de la &lt;strong&gt;mémoire&lt;/strong&gt;. Cette mémoire est divisée en différentes zones, et &lt;strong&gt;les deux principales&lt;/strong&gt; que tu manipules en C sont :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la &lt;strong&gt;stack&lt;/strong&gt; (ou pile)&lt;/li&gt;
+&lt;li&gt;la &lt;strong&gt;heap&lt;/strong&gt; (ou tas)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Chacune a un fonctionnement et un usage différents.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🚨 Messages d’erreur en C : les comprendre pour mieux les corriger</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</link>
+      <pubDate>Fri, 28 Mar 2025 10:50:59 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C (ou dans n&amp;rsquo;importe quel autre language d&amp;rsquo;ailleurs), il y a &lt;strong&gt;99% de chances&lt;/strong&gt; que tu te prennes des erreurs en pleine face 😅&lt;br&gt;
+Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mais ils veulent souvent dire des choses simples&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Voici les messages d’erreur que j&amp;rsquo;ai le plus souvent croisés, et ce qu’ils veulent dire 👇&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-implicit-declaration-of-function-xxx&#34;&gt;🔍 “implicit declaration of function ‘xxx’”&lt;/h2&gt;
+&lt;p&gt;💥 &lt;strong&gt;Traduction&lt;/strong&gt; : &amp;ldquo;Tu utilises une fonction que je ne connais pas.&amp;rdquo;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>📚 Les librairies en C : à quoi elles servent ?</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</link>
+      <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</guid>
+      
+      <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
+Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-définition-rapide&#34;&gt;📖 Définition rapide&lt;/h2&gt;
+&lt;p&gt;Une &lt;strong&gt;librairie&lt;/strong&gt; (ou bibliothèque) en C, c’est un fichier qui &lt;strong&gt;contient des fonctions toutes prêtes&lt;/strong&gt;, qu’on peut utiliser sans les réécrire soi-même.&lt;/p&gt;
+&lt;p&gt;📕 En gros, c&amp;rsquo;est comme un dictionnaire où l&amp;rsquo;ordinateur peut chercher les définitions des fonctions que tu veux utiliser.&lt;/p&gt;
+&lt;p&gt;Tu les ajoutes en début de fichier avec &lt;code&gt;#include &amp;lt;nom.h&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>🗒️ Comprendre les types en C simplement</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</link>
+      <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</guid>
+      
+      <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
+&lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-les-nombres--int-float-double-etc&#34;&gt;🔢 Les nombres : &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;double&lt;/code&gt;, etc&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;En C, on a plusieurs types pour représenter des nombres, selon &lt;strong&gt;le type de nombre&lt;/strong&gt; (entier, à virgule…) et &lt;strong&gt;l’espace mémoire&lt;/strong&gt; que ça prend.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>À Propos</title>
+      <link>https://emma-blnch.github.io/Blog-technique/about/</link>
+      <pubDate>Wed, 26 Mar 2025 11:08:31 +0100</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/about/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-qui-je-suis&#34;&gt;👋 Qui je suis&lt;/h2&gt;
+&lt;p&gt;Après plusieurs années passionnantes dans l&amp;rsquo;audiovisuel 🎥, j’ai choisi de réorienter ma carrière vers le développement logiciel 🖥️. Une décision portée par ma curiosité insatiable et mon envie de relever de nouveaux défis.&lt;/p&gt;
+&lt;p&gt;🎓 Actuellement en formation à l’école &lt;strong&gt;42 Paris&lt;/strong&gt;, j’apprends la programmation en &lt;strong&gt;C&lt;/strong&gt;, le &lt;strong&gt;développement web&lt;/strong&gt; et travaille sur des projets concrets, seule ou en équipe.&lt;/p&gt;
+&lt;p&gt;🎨 Je m’oriente progressivement vers le &lt;strong&gt;développement front-end&lt;/strong&gt;, là où je peux mettre à profit :&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
