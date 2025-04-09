@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Types on Compile-moi ça</title>
-    <link>http://localhost:1313/Blog-technique/tags/types/</link>
+    <link>https://emma-blnch.github.io/Blog-technique/tags/types/</link>
     <description>Recent content in Types on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 10:46:46 +0100</lastBuildDate><atom:link href="http://localhost:1313/Blog-technique/tags/types/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 10:46:46 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/tags/types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🗒️ Comprendre les types en C simplement</title>
-      <link>http://localhost:1313/Blog-technique/posts/types-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
       
-      <guid>http://localhost:1313/Blog-technique/posts/types-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</guid>
       
       <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
 &lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
