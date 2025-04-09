@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Librairies on Compile-moi ça</title>
-    <link>http://localhost:1313/Blog-technique/tags/librairies/</link>
+    <link>https://emma-blnch.github.io/Blog-technique/tags/librairies/</link>
     <description>Recent content in Librairies on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Fri, 28 Mar 2025 10:48:57 +0100</lastBuildDate><atom:link href="http://localhost:1313/Blog-technique/tags/librairies/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 10:48:57 +0100</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/tags/librairies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>📚 Les librairies en C : à quoi elles servent ?</title>
-      <link>http://localhost:1313/Blog-technique/posts/librairies-en-c/</link>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
       
-      <guid>http://localhost:1313/Blog-technique/posts/librairies-en-c/</guid>
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
 Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
