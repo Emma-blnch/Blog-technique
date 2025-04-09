@@ -2,17 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compile-moi ça</title>
-    <link>https://emma-blnch.github.io/Blog-technique/</link>
+    <link>http://localhost:1313/Blog-technique/</link>
     <description>Recent content on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Tue, 01 Apr 2025 13:51:02 +0200</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Apr 2025 13:25:18 +0200</lastBuildDate><atom:link href="http://localhost:1313/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🔁 Les boucles en C : while, for, do... et comment les utiliser</title>
+      <link>http://localhost:1313/Blog-technique/posts/les-boucles/</link>
+      <pubDate>Wed, 09 Apr 2025 12:47:14 +0200</pubDate>
+      
+      <guid>http://localhost:1313/Blog-technique/posts/les-boucles/</guid>
+      
+      <description>&lt;p&gt;Quand on apprend à coder, on se rend vite compte qu&amp;rsquo;on a souvent besoin de &lt;strong&gt;répéter une action plusieurs fois&lt;/strong&gt;. C’est là qu’entrent en jeu les &lt;strong&gt;boucles&lt;/strong&gt; 🔁&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-une-boucle-&#34;&gt;🧠 C’est quoi une boucle ?&lt;/h2&gt;
+&lt;p&gt;Une boucle permet d’exécuter &lt;strong&gt;plusieurs fois&lt;/strong&gt; un bloc de code, tant qu’une &lt;strong&gt;condition&lt;/strong&gt; est vraie.&lt;/p&gt;
+&lt;p&gt;Il existe &lt;strong&gt;plusieurs types&lt;/strong&gt; de boucles en C :&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-la-boucle-while&#34;&gt;🧵 La boucle &lt;code&gt;while&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, i);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;✅ Tant que la condition est vraie (&lt;code&gt;i &amp;lt; 5&lt;/code&gt;), on répète le bloc.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>🧹 Clean Code : écrire du code propre dès le début</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</link>
+      <link>http://localhost:1313/Blog-technique/posts/clean-code/</link>
       <pubDate>Tue, 01 Apr 2025 13:51:02 +0200</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/clean-code/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/clean-code/</guid>
       
       <description>&lt;p&gt;Quand tu commences à coder, tu cherches souvent à &lt;strong&gt;faire fonctionner ton programme&lt;/strong&gt;.&lt;br&gt;
 Mais avec le temps, tu réalises que faire &lt;strong&gt;fonctionner&lt;/strong&gt; ne suffit pas : il faut que ton code soit &lt;strong&gt;compréhensible&lt;/strong&gt;, &lt;strong&gt;structuré&lt;/strong&gt; et &lt;strong&gt;facile à maintenir&lt;/strong&gt;.&lt;/p&gt;
@@ -25,10 +48,10 @@ Mais avec le temps, tu réalises que faire &lt;strong&gt;fonctionner&lt;/strong&
     
     <item>
       <title>📁 Organiser un projet C : fichiers, dossiers, .h et Makefile</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/organisation/</link>
+      <link>http://localhost:1313/Blog-technique/posts/organisation/</link>
       <pubDate>Tue, 01 Apr 2025 13:40:04 +0200</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/organisation/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/organisation/</guid>
       
       <description>&lt;p&gt;Quand on commence à coder en C, on met souvent &lt;strong&gt;tout dans un seul fichier &lt;code&gt;.c&lt;/code&gt;&lt;/strong&gt;.&lt;br&gt;
 Et au début… ça fonctionne ! Mais plus ton projet grandit, plus &lt;strong&gt;tu risques de te perdre&lt;/strong&gt; si tu ne l’organises pas un minimum 😵‍💫&lt;/p&gt;
@@ -49,10 +72,10 @@ Et au début… ça fonctionne ! Mais plus ton projet grandit, plus &lt;strong&g
     
     <item>
       <title>📍 La fonction main : explication et utilité</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/main/</link>
+      <link>http://localhost:1313/Blog-technique/posts/main/</link>
       <pubDate>Fri, 28 Mar 2025 16:59:14 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/main/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/main/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, &lt;strong&gt;tout commence par une seule fonction&lt;/strong&gt; : &lt;code&gt;main()&lt;/code&gt;&lt;br&gt;
 C’est elle que le système appelle &lt;strong&gt;en premier&lt;/strong&gt; quand il lance ton programme.&lt;/p&gt;
@@ -67,10 +90,10 @@ Sans elle, ton programme ne sait pas &lt;strong&gt;par où commencer&lt;/strong&
     
     <item>
       <title>🖨️ Printf : affichage, formats et coulisses</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/printf/</link>
+      <link>http://localhost:1313/Blog-technique/posts/printf/</link>
       <pubDate>Fri, 28 Mar 2025 11:42:53 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/printf/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/printf/</guid>
       
       <description>&lt;p&gt;&lt;code&gt;printf&lt;/code&gt; est sûrement la &lt;strong&gt;fonction la plus utilisée&lt;/strong&gt; en C pour afficher des choses à l’écran.&lt;br&gt;
 Mais derrière sa simplicité apparente, elle cache pas mal de subtilités 🔍&lt;/p&gt;
@@ -84,10 +107,10 @@ Elle te permet &lt;strong&gt;d’afficher du texte ou des valeurs&lt;/strong&gt;
     
     <item>
       <title>🔗 Les pointeurs en C : enfin comprendre comment ça marche</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</link>
+      <link>http://localhost:1313/Blog-technique/posts/pointeurs-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:57 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/pointeurs-en-c/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/pointeurs-en-c/</guid>
       
       <description>&lt;p&gt;Ah, les pointeurs&amp;hellip; j&amp;rsquo;ai mis tellement de temps avant de vraiment les comprendre 😱&lt;br&gt;
 Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on le croit une fois qu’on comprend l’idée de base.&lt;/p&gt;
@@ -109,10 +132,10 @@ Mais en vrai, c’est &lt;strong&gt;beaucoup plus simple&lt;/strong&gt; qu’on 
     
     <item>
       <title>🧠 Stack, Heap et mémoire en C : comprendre où vont tes variables</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</link>
+      <link>http://localhost:1313/Blog-technique/posts/memoire-stack-heap/</link>
       <pubDate>Fri, 28 Mar 2025 10:52:16 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/memoire-stack-heap/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/memoire-stack-heap/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu entends souvent parler de &lt;strong&gt;stack&lt;/strong&gt; (pile) et de &lt;strong&gt;heap&lt;/strong&gt; (tas).&lt;br&gt;
 Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important ?&lt;/p&gt;
@@ -129,10 +152,10 @@ Mais qu’est-ce que ça veut dire concrètement ? Et pourquoi c’est important
     
     <item>
       <title>🚨 Messages d’erreur en C : les comprendre pour mieux les corriger</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</link>
+      <link>http://localhost:1313/Blog-technique/posts/messages-erreur/</link>
       <pubDate>Fri, 28 Mar 2025 10:50:59 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/messages-erreur/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/messages-erreur/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C (ou dans n&amp;rsquo;importe quel autre language d&amp;rsquo;ailleurs), il y a &lt;strong&gt;99% de chances&lt;/strong&gt; que tu te prennes des erreurs en pleine face 😅&lt;br&gt;
 Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mais ils veulent souvent dire des choses simples&lt;/strong&gt;.&lt;/p&gt;
@@ -145,10 +168,10 @@ Mais pas de panique ! Ces messages peuvent sembler effrayants, &lt;strong&gt;mai
     
     <item>
       <title>📚 Les librairies en C : à quoi elles servent ?</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</link>
+      <link>http://localhost:1313/Blog-technique/posts/librairies-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:48:57 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/librairies-en-c/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/librairies-en-c/</guid>
       
       <description>&lt;p&gt;Quand tu codes en C, tu vas souvent utiliser des &lt;strong&gt;librairies&lt;/strong&gt;.&lt;br&gt;
 Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
@@ -162,10 +185,10 @@ Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
     
     <item>
       <title>🗒️ Comprendre les types en C simplement</title>
-      <link>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</link>
+      <link>http://localhost:1313/Blog-technique/posts/types-en-c/</link>
       <pubDate>Fri, 28 Mar 2025 10:46:46 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/posts/types-en-c/</guid>
+      <guid>http://localhost:1313/Blog-technique/posts/types-en-c/</guid>
       
       <description>&lt;p&gt;Quand on commence à coder en C, on peut vite tomber sur la notion de &amp;ldquo;types&amp;rdquo; et être perdu sur les différences et rôles de chacun. Bien les comprendre c&amp;rsquo;est gagner &lt;strong&gt;en clarté&lt;/strong&gt; et &lt;strong&gt;en précision&lt;/strong&gt; dans ton code 💡&lt;/p&gt;
 &lt;p&gt;Voici un petit tour d’horizon des types de base que j&amp;rsquo;utilise tout le temps en C 🧵&lt;/p&gt;
@@ -177,10 +200,10 @@ Mais c’est quoi exactement une librairie ❓&lt;/p&gt;
     
     <item>
       <title>À Propos</title>
-      <link>https://emma-blnch.github.io/Blog-technique/about/</link>
+      <link>http://localhost:1313/Blog-technique/about/</link>
       <pubDate>Wed, 26 Mar 2025 11:08:31 +0100</pubDate>
       
-      <guid>https://emma-blnch.github.io/Blog-technique/about/</guid>
+      <guid>http://localhost:1313/Blog-technique/about/</guid>
       
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;-qui-je-suis&#34;&gt;👋 Qui je suis&lt;/h2&gt;
