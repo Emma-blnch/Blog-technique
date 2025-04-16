@@ -1,52 +1,53 @@
-# ✨ Blog technique – Compile-moi ça !
+# ✨ Technical blog - Compile this for me!
 
-Bienvenue sur mon blog personnel dédié à mon apprentissage du développement informatique, en particulier du langage C et des bases du web 💻
+Welcome to my personal blog dedicated to my learning of computer development, in particular C language and web basics 💻
 
-🔗 **Le site est en ligne ici** :  
+🔗 **The site is online here** :   
 👉 [https://emma-blnch.github.io/Blog-technique/](https://emma-blnch.github.io/Blog-technique/)
 
 ---
 
-## 🎯 Pourquoi ce blog ?
+## 🎯 Why this blog?
 
-Après plusieurs années dans l’audiovisuel 🎥, j’ai choisi de me réorienter vers le développement logiciel.  
-Aujourd’hui, je suis étudiante à l’école 42 à Paris, où j’apprends à coder en C, à manipuler la mémoire, à gérer des projets en équipe… et je voulais un endroit pour **partager ce que j’apprends**, poser mes idées, et peut-être aider d'autres personnes qui débutent aussi !
+After several years in the audiovisual industry 🎥, I chose to reorient myself towards software development.  
 
-Ce blog est à la fois :
-- mon **mémo personnel**
-- un **espace de vulgarisation**
-- un **support** pour d’autres en **reconversion** ou en **apprentissage**
+Today, I'm a student at Ecole 42 in Paris, where I'm learning to code in C, manipulate memory, manage team projects... and I wanted a place to **share what I'm learning**, put down my ideas, and maybe help other people who are just starting out too!
 
----
-
-## 📚 Ce que tu trouveras dans ce blog
-
-J’alimente régulièrement le blog avec des articles sur les bases du langage C et du dev :
-
-- 🔢 Les **types de base en C** (`int`, `char`, `float`, `const`, etc.)
-- 📦 Les **librairies standard**
-- 🧠 La gestion de la **mémoire** (stack vs heap)
-- 🚨 Les **messages d’erreur courants** et comment les comprendre
-- 🔗 Les **pointeurs**
-- … et bientôt des exercices, des retours de projets, comment bien travailler en équipe, etc...
-
-Tous les contenus sont rédigés de façon simple et imagée pour vraiment comprendre un maximum.
-> Étant encore en apprentissage, des erreurs peuvent potentiellement se glisser dans mes articles, n'hésite pas à me le signaler !
+This blog is both :
+- my **personal memo**
+- a **space for popularization**
+- a **support** for others who are **reconverting** or **learning**.
 
 ---
 
-## ⚙️ Tech utilisé
+## 📚 What you'll find in this blog
+
+I regularly feed the blog with articles on the basics of the C language and dev :
+
+- 🔢 The **basic types in C** (`int`, `char`, `float`, `const`, etc.)
+- 📦 The **standard libraries**.
+- 🧠 **Memory management** (stack vs heap)
+- 🚨 **Common error messages** and how to understand them
+- 🔗 The **pointers**
+- and many more to come!
+
+All content is written (in French) in a simple, pictorial way to really understand as much as possible.
+> As I'm still learning, mistakes can potentially creep into my articles, so don't hesitate to let me know!
+
+---
+
+## ⚙️ Tech stack
 
 - [Hugo](https://gohugo.io/) (static site generator)
-- Thème : [hugo-blog-awesome](https://github.com/sidharthachatterjee/hugo-blog-awesome)
-- Hébergement via [GitHub Pages](https://pages.github.com/)
+- Theme : [hugo-blog-awesome](https://github.com/sidharthachatterjee/hugo-blog-awesome)
+- Hosting via [GitHub Pages](https://pages.github.com/)
 
 ---
 
-## 🙌 Merci de ta visite
+## 🙌 Thanks for visiting
 
-Tu veux me suivre dans mon parcours de reconversion ?  
-Tu peux me retrouver sur [LinkedIn](https://www.linkedin.com/in/emmablnch/) pour discuter, ou contribuer à ce blog si le cœur t’en dit !
+Would you like to follow me on my conversion journey?  
+you can find me on [LinkedIn](https://www.linkedin.com/in/emmablnch/) to chat, or contribute to this blog if you feel like it!  
 
-> Compile-moi ça 🔧  
-> Et debugue ta reconversion 🚀
+> Compile this for me 🔧  
+> And debug your conversion 🚀
