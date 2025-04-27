@@ -6,7 +6,60 @@
     <description>Recent content on Compile-moi ça</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 23 Apr 2025 13:25:18 +0200</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Apr 2025 13:25:18 +0200</lastBuildDate><atom:link href="https://emma-blnch.github.io/Blog-technique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🌐 TCP/IP, ports, sockets... comprendre comment Internet fonctionne</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/tcp-ip/</link>
+      <pubDate>Sun, 27 Apr 2025 13:25:18 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/tcp-ip/</guid>
+      
+      <description>&lt;p&gt;Quand tu ouvres un site, que tu envoies un message ou que tu ping un serveur… tu utilises &lt;strong&gt;le protocole TCP/IP&lt;/strong&gt; sans même t’en rendre compte 🌐&lt;br&gt;
+Mais&amp;hellip; c’est quoi exactement ? Et comment tout ça fonctionne en pratique ?&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-tcpip-&#34;&gt;🧠 C’est quoi TCP/IP ?&lt;/h2&gt;
+&lt;p&gt;TCP/IP est un ensemble de &lt;strong&gt;protocoles de communication&lt;/strong&gt; utilisés pour faire transiter des données sur Internet.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IP&lt;/strong&gt; (Internet Protocol) → gère les adresses&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TCP&lt;/strong&gt; (Transmission Control Protocol) → gère le transport fiable des données&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-adresse-ip-et-port&#34;&gt;📦 Adresse IP et port&lt;/h2&gt;
+&lt;p&gt;Une &lt;strong&gt;adresse IP&lt;/strong&gt; identifie un appareil sur le réseau.&lt;br&gt;
+Un &lt;strong&gt;port&lt;/strong&gt; identifie une application spécifique sur cet appareil.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>📦 Les structures (`struct`) en C : organiser ses données proprement</title>
+      <link>https://emma-blnch.github.io/Blog-technique/posts/les-structures/</link>
+      <pubDate>Wed, 16 Apr 2025 13:04:14 +0200</pubDate>
+      
+      <guid>https://emma-blnch.github.io/Blog-technique/posts/les-structures/</guid>
+      
+      <description>&lt;p&gt;Quand on commence à avoir plusieurs variables qui vont ensemble, le mieux c’est de &lt;strong&gt;les regrouper dans une structure&lt;/strong&gt; (&lt;code&gt;struct&lt;/code&gt;).&lt;br&gt;
+C’est comme créer un &lt;strong&gt;nouveau type de donnée&lt;/strong&gt; personnalisé 📦&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-cest-quoi-une-struct-&#34;&gt;🧠 C’est quoi une &lt;code&gt;struct&lt;/code&gt; ?&lt;/h2&gt;
+&lt;p&gt;C’est une &lt;strong&gt;collection de variables&lt;/strong&gt; (de types différents ou non), regroupées sous un même nom.&lt;/p&gt;
+&lt;p&gt;Exemple :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; personne {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;nom;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; age;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;pourquoi-cest-utile-&#34;&gt;Pourquoi c’est utile ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tu regroupes &lt;strong&gt;proprement&lt;/strong&gt; les données&lt;/li&gt;
+&lt;li&gt;Tu passes &lt;strong&gt;moins d’arguments&lt;/strong&gt; aux fonctions&lt;/li&gt;
+&lt;li&gt;Ton code devient &lt;strong&gt;plus lisible&lt;/strong&gt; et &lt;strong&gt;facile à maintenir&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exemple concret :
+Tu écris un shell, et tu veux garder des infos importantes (comme un PID, un statut d’erreur, etc.) accessibles &lt;strong&gt;partout&lt;/strong&gt;.&lt;br&gt;
+Plutôt que de jongler avec plusieurs variables, tu crées une &lt;code&gt;struct&lt;/code&gt; qui centralise tout ça :&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>🧑‍🤝‍🧑 Mes premiers projets en équipe : ce que j&#39;ai appris</title>
       <link>https://emma-blnch.github.io/Blog-technique/posts/premier-projet-equipe/</link>

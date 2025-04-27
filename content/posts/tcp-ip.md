@@ -1,5 +1,5 @@
 +++
-date = '2025-04-23T13:25:18+02:00'
+date = '2025-04-27T13:25:18+02:00'
 draft = false
 title = '🌐 TCP/IP, ports, sockets... comprendre comment Internet fonctionne'
 description = "Une introduction simple aux bases du réseau : TCP/IP, sockets, ports… tout ce que j’aurais aimé comprendre dès le début !"

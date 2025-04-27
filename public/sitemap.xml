@@ -2,11 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://emma-blnch.github.io/Blog-technique/posts/tcp-ip/</loc>
+    <lastmod>2025-04-27T13:25:18+02:00</lastmod>
+  </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/</loc>
-    <lastmod>2025-04-23T13:25:18+02:00</lastmod>
+    <lastmod>2025-04-27T13:25:18+02:00</lastmod>
   </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/posts/</loc>
-    <lastmod>2025-04-23T13:25:18+02:00</lastmod>
+    <lastmod>2025-04-27T13:25:18+02:00</lastmod>
+  </url><url>
+    <loc>https://emma-blnch.github.io/Blog-technique/posts/les-structures/</loc>
+    <lastmod>2025-04-16T13:04:14+02:00</lastmod>
   </url><url>
     <loc>https://emma-blnch.github.io/Blog-technique/posts/premier-projet-equipe/</loc>
     <lastmod>2025-04-09T13:52:56+02:00</lastmod>
