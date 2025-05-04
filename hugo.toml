@@ -59,3 +59,5 @@ theme = 'blog-awesome'
 
 relativeURLs = true
 canonifyURLs = true
+
+enableRobotsTXT = true
